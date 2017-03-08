@@ -1,0 +1,33 @@
+﻿.AddInterfaceContent {
+        margin: 0 auto;
+    }
+
+       .AddInterfaceContent .box ul {
+             list-style-type: none;
+       }
+       .AddInterfaceContent #menu>li{
+           font-size:14px;
+       }
+
+        /*按钮区域*/
+       .AddInterfaceContent .sub {
+            width: 400px;
+            text-align: center;
+            margin: 20px auto 0px;
+        }
+
+        .AddInterfaceContent .sub input {
+                height: 35px;
+                background-color: #467ca2;
+                border: 1px solid #ffffff;
+                color: #ffffff;
+                margin-right: 20px;
+        }
+
+       .AddInterfaceContent .sub #submit {
+                width: 100px;
+       }
+
+       .AddInterfaceContent .sub #login {
+                width: 150px;
+       }

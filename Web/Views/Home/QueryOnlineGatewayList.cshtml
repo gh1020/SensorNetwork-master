@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "查询在线网关列表";
+}
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div style="margin-left:10px;margin-right:10px;">
+        <h5>当前位置：可用接口->网关查询->查询在线网关列表        </h5><br />
+        <p>            1.功能描述：        </p><fieldset>
+<pre>通过本接口可以当前用户下在线的网关。</pre>
+        </fieldset><br />
+        <p>            2.接口地址：        </p>
+        <fieldset>
+            <pre>http://www.gosafenet.net/api/gateway?authCode={authCode}</pre>
+        </fieldset><br />
+        <p>                    3.说明：                </p>
+        <fieldset>
+            <p>(1).调用方法GET</p>
+            <p>(2).参数为authCode，代表查询在线网关的权限码，可为应用云平台代码，为必填项</p>
+        </fieldset><br />
+
+
+
+        <p>                    4.返回说明：                </p>
+        <fieldset>
+            <pre>参数说明：</pre>
+            <p>
+                (1).is_authenticated:是否已经通过验证<br />
+                (2).is_valid:是否有效<br />
+                (3).last_alive:最后活动时间<br />
+                (4).ipaddress:网关地址<br />
+                (5).session_id:回话id<br />
+                (6).id:网关id<br />
+                (7).token:网关令牌<br />
+            </p>
+
+            <p>返回结果以JSON格式输出，其中，"Success"表示操作成功，"Code"表示返回代码，"Result"表示结果，返回true/false，"Error"表示错误信息，支持HTML。</p>
+            <p>例如：</p>
+            <pre>{
+  "Success": true,
+  "Code": 2,
+  "Result": [
+    {
+      "is_authenticated": true,
+      "is_valid": true,
+      "last_alive": "2016-10-27T15:45:22.6045194+08:00",
+      "ipaddress": "sample string 4",
+      "session_id": "sample string 5",
+      "id": "sample string 6",
+      "token": "fa5d44c0-93d3-4d15-a5e4-302ef9ee34d5"
+    },
+    {
+      "is_authenticated": true,
+      "is_valid": true,
+      "last_alive": "2016-10-27T15:45:22.6045194+08:00",
+      "ipaddress": "sample string 4",
+      "session_id": "sample string 5",
+      "id": "sample string 6",
+      "token": "fa5d44c0-93d3-4d15-a5e4-302ef9ee34d5"
+    }
+  ],
+  "Error": "sample string 3"
+}
+如果传参正常，结果为空，则返回以下JSON包
+{
+    "Success":true,
+    "Code":0,
+    "Result":[]
+}
+           
+如果传参错误，则返回以下JSON包
+{
+     "Success":false,
+     "Code":0,
+     "Result":null,
+     "Error":"UID不可为空。"
+}
+</pre>
+        </fieldset>
+
+
+    </div>
+</body>
+</html>
+
+

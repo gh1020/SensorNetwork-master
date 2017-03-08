@@ -1,0 +1,548 @@
+﻿@using SensorNetwork.Data.Models
+@model SensorNetwork.Data.Models.ApplyCloudPlatform
+@{
+    ViewBag.Title = "Register";
+}
+
+<head>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            font-family: "细圆";
+        }
+
+        a {
+            text-decoration: none;
+        }
+        /*头部div*/
+        #header {
+            background-color: #467ca2;
+            background-repeat: no-repeat;
+            /*border:1px solid red;*/
+            height: 87px;
+        }
+
+        #logo {
+            margin-top: 0px;
+            position: absolute;
+            left: 100px;
+            height: 85px;
+            text-align: center;
+            /*border:1px solid black;*/
+        }
+
+        #navMenu {
+            position: absolute;
+            right: 300px;
+            height: 33px;
+            top: 27px;
+            vertical-align: middle;
+        }
+
+            #navMenu a {
+                margin-top: 8px;
+                color: white;
+                font-size: 17px;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+        #option {
+            right: 80px;
+            position: absolute;
+            top: 28px;
+        }
+
+            #option a {
+                border-radius: 15px;
+                cursor: pointer;
+                display: inline-block;
+                line-height: 31px;
+                margin-right: 11px;
+                text-align: center;
+                width: 74px;
+                background-color: #466c82;
+                color: #fff;
+            }
+
+        /*主体div*/
+        #main {
+            margin: 1px auto;
+        }
+
+        /*内容*/
+        #content {
+            margin: 20px auto 0px;
+            width: 750px;
+            /*border:1px solid red;*/
+        }
+        /*登录标题*/
+        #title {
+            margin: 0px auto 20px;
+            font-size: 30px;
+            /*border:1px solid black;*/
+            text-align: center;
+        }
+
+
+        /*账号  密码*/
+        ol {
+            margin: 0px;
+            padding: 0px;
+            /*border:1px solid #0094ff;*/
+        }
+
+            ol li {
+                margin-bottom: 26px;
+                list-style-type: none;
+                /*border:1px solid #4cff00;*/
+                list-style-position: hanging;
+                padding-left: 100px;
+            }
+
+        li label {
+            color: #5c5c5c;
+            font-size: 16px;
+            width: 100px;
+            display: inline-block;
+        }
+
+        ol input {
+            /*margin-left:10px;*/
+            border: 1px solid #cecece;
+            height: 45px;
+            width: 345px;
+            border-radius: 30px;
+            padding-left: 10px;
+            outline: none;
+            font-size:14px;
+        }
+
+
+        /*注册按钮*/
+        .regisBtn {
+            background-color: #467ca2;
+            border: none;
+            border-radius: 30px;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 24px;
+            height: 55px;
+            margin: 0;
+            text-align: center;
+            width: 345px;
+        }
+
+        .errMsg {
+            color: red;
+            text-align: left;
+            font-size: 12px;
+            margin-left: 3px;
+        }
+
+        select {
+            padding-left: 46px;
+            text-indent: 6px;
+            width: 345px;
+            height: 45px;
+            background: #ffffff none repeat scroll 0 0;
+            border: 1px solid #cecece;
+            font-size: 14px;
+            line-height: 16px;
+            padding: 12px 4px;
+        }
+
+            select option {
+                height: 30px;
+                padding-left: 8px;
+                padding-top: 8px;
+                padding-bottom: -2px;
+                text-indent: 6px;
+                font-size: 14px;
+                line-height: 16px;
+            }
+
+        #Footter {
+            width: 100%;
+            height: 70px;
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 100px;
+            background-color: #467ca2;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        #RecordNumber a:link, a:visited {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="bodydiv" style="position:relative;min-width:1280px;">
+        <div id="header" style="position:relative;">
+            <div id="logo">
+                <img src="~/Content/images/logo_white.jpg" style="height:60px;padding-top:15px;" />
+            </div>
+            <div id="navMenu">
+                <a href="/Document/Index">首页</a>
+            </div>
+            <div id="option">
+                <a href="/User/Login">登录</a>
+                <a href="#">注册</a>
+            </div>
+        </div>
+        <div id="main" style="margin-bottom:100px;">
+            <div id="content" style="padding-bottom:100px;">
+                <p id="title">用户注册</p>
+                @using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "post", OnSuccess = "success" }))
+            {
+                    <ol>
+                        <li>
+                            <label>云平台名称</label>
+                            <input type="text" name="PlatformName" id="PlatformName" value="" placeholder="请输入您的应用平台名称" />
+                            <span class="errMsg"></span>
+                        </li>
+                        <li>
+                            <label>账号</label>
+                            <input type="text" name="AccessID" id="AccessID" value="" placeholder="数字或字母中间不能有空格，最少为6个字符" />
+                            <span class="errMsg"></span>
+                        </li>
+                        <li>
+                            <label>密码</label>
+                            <input type="password" name="AccessPwd" id="AccessPwd" value="" placeholder="数字或字母中间不能有空格，最少为6个字符" />
+                            <span class="errMsg"></span>
+                        </li>
+                        <li>
+                            <label>确认密码</label>
+                            <input type="password" name="confirmPwd" value="" id="confirmPwd" placeholder="请再输入密码" />
+                            <span class="errMsg"></span>
+                        </li>
+                        <li>
+                            <label>行业类别</label>
+                            <select name="acCategory" id="channel" data-placeholder="请选择行业类别？" style="width:345px;" class="chosen-select">
+                                @if (ViewData["category"] != null)
+                                {
+                                    foreach (var category in ViewData["category"] as List<ApplyCloudCategory>)
+                                    {
+                                        <option value="@category.CategoryName">@category.CategoryName</option>
+                                    }
+                                }
+                            </select>
+                        </li>
+                        <li>
+                            <label>Http接口</label>
+                            <input type="text" name="HTTPInterfaces" value="" placeholder="格式如http://202.93.59.16/api/Sensor" class="HttpInterfaces" />
+                            <span class="errMsg"></span>
+                            <img src="~/Content/images/add.png" id="add" style="height:45px;width:45px;margin-left:10px;margin-bottom:-15px;" />
+                        </li>
+                    </ol>
+                    <input type="button"  name="submit" value="注册" class="regisBtn" style="margin-left:200px;" />
+                }
+            </div>
+        </div>
+        <div id="Footter">
+            <p style="font-size:14px;">Copyright &copy 2015 &nbsp;联桥网云信息科技（长沙）有限公司 &nbsp;版权所有 &nbsp;</p>
+            <p style="font-size:12px;">公司地址:湖南省长沙市高新区文轩路27号麓谷企业广场金融科技大厦16楼1606 电话：0731-82858885 传真：0731-82858908</p>
+            <p style="font-size:12px;" id="RecordNumber">
+                备案号：
+                <a href="http://www.miitbeian.gov.cn/">湘ICP备15019292号</a>
+            </p>
+        </div>
+    </div>
+</body>
+
+<script src="~/Scripts/jquery-3.1.0.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<script src="~/Scripts/chosen/chosen.jquery.js"></script>
+<link href="~/Scripts/chosen/chosen.css" rel="stylesheet" />
+<link href="~/Scripts/chosen/Index.css" rel="stylesheet" />
+
+<script src="~/Scripts/artDialog/artDialog.js?skin=blue"></script>
+<script type="text/javascript">
+
+    function artAlert(res) {
+        art.dialog({
+            lock: true,
+            drag: false,
+            background: '#000',
+            opacity: 0.6,
+            title: '提示',
+            icon: 'warning',
+            content: res,
+            
+            ok: function () {
+                this.close();
+            },
+            cancel: false
+        });
+    }
+    function success(res) {
+        if (res == "注册成功") {
+            art.dialog({
+                drag:false,
+                lock: true,
+                background: '#000',
+                opacity: 0.6,
+                icon: 'success',
+                title: '提示',
+                content: res,
+                ok: function () {
+                    window.location = "/User/Login";
+                },
+                cancel: false
+            });
+        } else {
+            artAlert(res);
+            $(".regisBtn").prop("type", "button");
+        }
+     }
+
+        $(function () {
+
+            var height = document.documentElement.clientHeight;
+            $("#bodydiv").css("min-height", height);
+
+            // 平台名称
+            $("#PlatformName").blur(function () {
+                var name = $(this).val().trim();
+                if (name.length == 0) {
+                    $(this).next().text("*平台名称不能为空！");
+                } 
+            })
+
+            $("#PlatformName").bind("input propertychange", function () {
+                var name = $(this).val().trim();
+                if (name.length != 0) {
+                    $(this).next().text("");
+                }
+            })
+
+            // 账号 密码
+            $("#AccessID,#AccessPwd").blur(function () {
+                var str = $(this).val().trim();
+                if (str.length == 0) {
+                    $(this).next().text("*账号不能为空！");
+                
+                } else if (str.length < 6) {
+                    $(this).next().text("*最少为6个字符");
+                   
+                }else{
+                    var re = new RegExp("^[A-Za-z0-9]+$");
+                    if (!re.test(str)) {
+                        $(this).next().text("*允许字母或数字，中间不能有空格");
+                       
+                    } else {
+                        $(this).next().text("");
+                        
+                    }
+                }
+            })
+            $("#AccessID,#AccessPwd").bind("input propertychange", function () {
+                var str = $(this).val().trim();
+                if (str.length != 0) {
+                    $(this).next().text("");
+                }
+            })
+
+            // 确认密码
+            $("#confirmPwd").blur(function () {
+                var pwd = $("#AccessPwd").val();
+                var confirmPwd = $(this).val();
+                if (pwd != confirmPwd) {
+                    $(this).next().text("两次密码不一致");
+                    
+                } else {
+                    $(this).next().text("");
+                    
+                }
+            })
+
+            $("#confirmPwd").bind("input propertychange", function () {
+                var inputCode = $(this).val();
+                if (inputCode == $("#AccessPwd").val()) {
+                    $(this).next().text("");
+                   
+                }
+            })
+
+            // 接口
+            $(".HttpInterfaces").blur(function () {
+                var httpStr = $(this).val().trim();
+                if (httpStr.length == 0) {
+                    $(this).next().text("*Http接口不能为空！");
+                    
+                } else {
+                    var strRegex = "((http|ftp|https)://)(([a-zA-Z0-9\._-]+\.[a-zA-Z]{2,6})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9\&%_\./-~-]*)?";
+                    var re = new RegExp(strRegex);
+                    if (!re.test(httpStr)) {
+                        $(this).next().text("*接口格式不正确");
+                       
+                    } else {
+                        $(this).next().text("");
+                       
+                    }
+                }
+            })
+            $(".HttpInterfaces").bind("input propertychange", function () {
+                var httpStr = $(this).val().trim();
+                if (httpStr.length != 0)
+                {
+                    $(this).next().text("");
+                }
+            })
+
+            // 为新增的接口输入框绑定事件
+            $(document).on("focus", ".newAddInter", function () {
+                $(this).css("border", "1px solid #467ca2");
+            })
+            
+             $("#option a").mouseover(function () {
+                    $(this).css("background-color", "#465c72")
+             })
+             $("#option a").mouseout(function () {
+                    $(this).css("background-color", "#466c82")
+             })
+
+             $("input").focus(function () {
+                    $(this).css("border", "1px solid #467ca2");
+             });
+             $("input").blur(function () {
+                    $(this).css("border", "1px solid #cecece");
+             })
+
+            $(".chosen-select").chosen({ disable_search_threshold: 10 });
+
+            var con = 1;
+            $("#add").click(function () {
+                var removeId = "remove" + con.toString();
+                var addInputId = "newAddInter" + con.toString();
+                $("ol").append("<li><label></label><input type='text' name='HTTPInterfaces' class='newAddInter' id='" + addInputId + "' placeholder='格式如http://202.93.59.16/api/Sensor'/><span class='errMsg'></span><img src='../Content/images/remove.png' class='remove' id='" + removeId + "'style='height:45px;width:45px;margin-left:18px;margin-bottom:-15px;'/></li>")
+                $(document).on("click", "#" + removeId, function () {
+                    $("#" + removeId).parent().remove();
+                 
+                })
+
+                $(document).on("blur", "#" + addInputId, function () {
+                    $(this).css("border", "1px solid #cecece");
+                    var httpStr = $(this).val().trim();
+                    if (httpStr.length == 0) {
+                        $(this).next().text("*Http接口不能为空！");
+                       
+                    } else {
+                        var strRegex = "((http|ftp|https)://)(([a-zA-Z0-9\._-]+\.[a-zA-Z]{2,6})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9\&%_\./-~-]*)?";
+                        var re = new RegExp(strRegex);
+                        if (!re.test(httpStr)) {
+                            $(this).next().text("*接口格式不正确");
+                           
+                        } else {
+                            $(this).next().text("");
+                          
+                        }
+                    }
+                })
+
+                $(document).on("input propertychange", "#" + addInputId, function () {
+                    var httpStr = $(this).val().trim();
+                    if (httpStr.length != 0) {
+                        $(this).next().text("");
+                    }
+                })
+                con++;
+            })
+
+
+            $(".regisBtn").click(function () {
+
+                // 云平台名称
+                var platName = $("#PlatformName").val().trim();
+                if (platName.length == 0) {
+                    artAlert("请完善信息");
+                    return;
+                }
+
+                // 账号 
+                var accessID = $("#AccessID").val().trim();
+                var pwd = $("#AccessPwd").val().trim();
+                var re = new RegExp("^[A-Za-z0-9]+$");
+                if (accessID.length == 0) {
+                    artAlert("请完善信息");
+                    return;
+                }else if(accessID.length < 6 || !re.test(accessID)){
+                    artAlert("账号格式不正确")
+                    return;
+                }
+
+                //密码
+                if (pwd.length == 0) {
+                    artAlert("请完善信息");
+                    return;
+                }else if(pwd.length < 6 || !re.test(pwd)){
+                    artAlert("密码格式不正确")
+                    return;
+                }
+
+                // 确认密码
+                var confirmPwd = $("#confirmPwd").val().trim();
+                if(pwd != confirmPwd){
+                    artAlert("两次密码不一致");
+                    return;
+                }
+
+                // 接口
+                var httpStr = $(".HttpInterfaces").val().trim();
+                var strRegex = "((http|ftp|https)://)(([a-zA-Z0-9\._-]+\.[a-zA-Z]{2,6})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9\&%_\./-~-]*)?";
+                var reg = new RegExp(strRegex);
+                if(httpStr.length == 0){
+                    artAlert("接口不能为空");
+                    return;
+                }else if( !reg.test(httpStr) ){
+                    artAlert("接口格式不正确");
+                    return;
+                }
+                
+                
+                // 新增接口
+                var result = true;
+                var des = "";
+                $(".newAddInter").each(function (key, value) {
+                    var addHttpStr = $(this).val();
+                    if (addHttpStr.length == 0) {
+                        des = "接口不能为空";
+                        result = false;
+                    } else if (!reg.test(addHttpStr)) {
+                        des = "接口格式不正确";
+                        result = false;
+                    }
+                });
+
+                if (!result) {
+                    artAlert(des);
+                    return;
+                }
+                $(this).prop("type", "submit");
+            })
+
+
+            document.onkeydown = function (event) {
+                var e = event || window.event || arguments.callee.caller.arguments[0];
+                if (e && e.keyCode == 27) { // 按 Esc 
+                    //要做的事情
+                }
+                if (e && e.keyCode == 113) { // 按 F2 
+                    //要做的事情
+                }
+                if (e && e.keyCode == 13) { // enter 键
+                    //要做的事情
+                    $(".regisBtn").click();
+                }
+            };
+        })
+</script>
+
+

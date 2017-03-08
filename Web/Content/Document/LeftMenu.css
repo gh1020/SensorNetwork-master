@@ -1,0 +1,77 @@
+﻿  #Content-left {
+            width: 20%;
+            float:left;
+            position:relative;
+        }
+        #Content-left .yiji{
+            padding:0;
+        }
+
+        #Content-right {
+            width: 60%;
+            background-color: white;
+           float:left;
+        }
+
+       #Content-left .list {
+            position:relative;
+            left:10px;
+            width: 240px;
+            margin: 0px auto 0 auto;
+        }     
+ .list a{
+            text-decoration:none;
+            font-family:'幼圆';
+            display:block;
+            font-size:13px;
+        }
+        ul li{
+            list-style:none;
+        }
+       .yiji{
+           width:240px;
+           margin-top:0px;
+           margin-left:0px;
+       }
+       .yiji>li{
+           background:#eef3f6 none repeat scroll 0 0;
+           margin-bottom:2px;
+       }
+       .yiji>li>a:hover{
+           background:#6196bb  none repeat scroll 0 0 !important;
+       }
+       .yiji>li>a{
+           line-height:38px;
+           padding:0 23px;
+           color:#2d3132;
+       }
+       .yiji ul{
+           padding-top:2px;
+           background:#f7fafc none repeat scroll 0 0;
+           padding:0px 24px;
+       }
+       .yiji ul li a{
+           color: #656363;
+           line-height:30px;
+           
+       }
+       .yiji ul li a:hover{
+           color:#6196bb !important;
+       }
+
+       .yiji ul li ul{
+           padding:0px 0px;
+       }
+       .yiji ul li ul li a{
+            color: #656363;
+            line-height: 25px;
+            padding: 0 0;
+       }
+      .erji.active{
+          color: #bcbec1;
+          cursor: default;
+          
+      }
+      .erji.active:hover{
+          color:#bcbec1 !important;
+      }

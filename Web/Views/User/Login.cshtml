@@ -1,0 +1,378 @@
+﻿@model SensorNetwork.Data.Models.ApplyCloudPlatform
+@{
+    ViewBag.Title = "Login";
+}
+<head>
+    <style type="text/css">
+        *{
+            margin:0px;
+            font-family:"细圆"
+        }
+        a{
+            text-decoration:none;
+        }
+        /*头部div*/
+        #header{
+            background-color:#467ca2;
+            background-repeat:no-repeat;
+            height:87px;
+        }
+        #logo{
+            margin-top:0px;
+            position:absolute;
+            left:100px;
+            height:85px;
+            text-align:center;
+            /*border:1px solid black;*/
+        }
+        #navMenu{
+            position:absolute;
+            right:300px;
+            height:33px;
+            top:27px;
+            vertical-align:middle;
+        }
+        #navMenu a{
+            margin-top:8px;
+            color:white;
+            font-size:17px;
+            text-decoration:none;
+            display:inline-block;
+        }
+        #option{
+            right:80px;
+            position:absolute;
+            top:28px;
+        }
+        #option a{
+            border-radius: 15px;
+            cursor: pointer;
+            display: inline-block;
+            line-height: 31px;
+            margin-right: 11px;
+            text-align: center;
+            width: 74px;
+             background-color: #466c82;
+             color: #fff;
+        }
+
+        /*主体div*/
+
+            #main {
+               /*border: 1px solid green;*/
+               margin:1px auto;
+               height:500px;
+           }
+           
+            /*内容*/ 
+            #content{
+                margin:50px auto 0px;
+                width:650px;
+                /*border:1px solid red;*/
+            }
+            /*登录标题*/
+            #title{
+                margin:0px auto;
+                font-size:30px;
+                /*border:1px solid black;*/
+                text-align:center;
+            }
+            /*还没有账号?*/
+            #regisMsg{
+                margin:20px auto 10px;
+                font-size:14px;
+                /*border:1px solid red;*/
+                color:#5c5c5c;
+                text-align:center;
+            }
+            /*还没有账号?立即注册*/
+            #regisMsg a{
+                color:#2b98fc;
+                text-decoration:none;
+            }
+           
+            /*账号  密码*/
+            ol{
+                margin:0px;
+                padding:0px;
+                /*border:1px solid #0094ff;*/
+            }
+            ol li{
+                margin-bottom:26px;
+                list-style-type:none;
+                /*border:1px solid #4cff00;*/
+                list-style-position:hanging;
+                padding-left:100px;
+            }
+            li label{
+                color:#5c5c5c;
+                font-size:16px;
+                width:60px;
+                display:inline-block;
+            }
+
+            ol input{
+                /*margin-left:10px;*/
+                border:1px solid #cecece;
+                height:45px;
+                width:345px;
+                border-radius:30px;
+                padding-left:10px;
+                outline:none;
+                font-size:14px;
+            }
+
+            /*登录按钮*/
+            .logBtn{
+                background-color: #467ca2;
+                border:none;
+                border-radius: 30px;
+                color: #fff;
+                cursor: pointer;
+                display: inline-block;
+                font-size: 24px;
+                height: 55px;
+                margin: 0;
+                text-align: center;
+                width: 345px;
+            }
+      
+        .errMsg {
+            color: red;
+            font-size:12px;
+            text-align: left;
+            margin-left: 10px;
+        }
+        #code {
+            background-image: url('../../Content/images/codeBg.jpg');
+            font-family: Arial;
+            font-style: italic;
+            font-weight: bold;
+            border: 0;
+            width:80px;
+            height:40px;
+            border-radius:0px;
+            letter-spacing: 2px;
+            color: blue;
+            text-align:center;
+            vertical-align: middle;
+            width:80px;
+            height:40px;
+        }  
+         .changeCode{
+             cursor: pointer;
+         }
+
+         #RecordNumber a:link,a:visited{
+             color:white;
+         }
+          #Footer {
+            width:100%;
+            height:80px;
+            text-align:center;
+            padding-top:20px;
+            background-color: #467ca2;
+            position:absolute;
+            left:0;
+            bottom:0;
+         }
+    </style>
+</head>
+<body>
+    <div id="bodydiv" style="position:relative;min-width:1280px;">
+        <div id="header" style="position:relative;">
+            <div id="logo">
+                <img src="~/Content/images/logo_white.jpg" style="height:60px;padding-top:15px;" />
+            </div>
+            <div id="navMenu">
+                <a href="/Document/Index">首页</a>
+            </div>
+            <div id="option">
+                <a href="#">登录</a>
+                <a href="/User/Register">注册</a>
+            </div>
+        </div>
+        <div id="main">
+            <div id="content" style="padding-bottom:100px;">
+                <p id="title">登录</p>
+                <p id="regisMsg">还没有账号？<a href="/User/Register/">立即注册</a></p>
+                @using (Ajax.BeginForm("Login", "User", new AjaxOptions { HttpMethod = "post", OnSuccess = "success"}))
+            {
+                    <ol>
+                        <li>
+                            <label>账号</label>
+                            <input type="text" id="AccessID" name="AccessID" value="" placeholder="请输入账号"/>
+                            <span class="errMsg"></span>
+                        </li>
+                        <li>
+                            <label>密码</label>
+                            <input type="password" id="AccessPwd" name="AccessPwd" value="" placeholder="请输入密码"/>
+                            <span class="errMsg"></span>
+                        </li>
+                        <li>
+                            <label>验证码</label>
+                            <input type="text" id="vCode" style="width:120px;" />
+                            <input id="code" type="button" disabled="disabled" />
+                            <span style="font-size:12px;margin-left:5px;" onclick="createCode()" class="changeCode">看不清？换一个验证码</span>
+                            <span style="margin-left:5px;color:red;font-size:12px;" id="codeMsg"></span>
+                        </li>
+                        <li style="margin-top: 50px;margin-bottom: 2px;">
+                            <label></label>
+                            <input type="button" name="submit" value="登录" class="logBtn"/>
+                        </li>
+                    </ol>
+                }
+            </div>
+        </div>
+        <div id="Footer">
+            <p style="font-size:14px;">Copyright &copy 2015 &nbsp;联桥网云信息科技（长沙）有限公司 &nbsp;版权所有 &nbsp;</p>
+            <p style="font-size:12px;">公司地址:湖南省长沙市高新区文轩路27号麓谷企业广场金融科技大厦16楼1606 电话：0731-82858885 传真：0731-82858908</p>
+            <p style="font-size:12px;" id="RecordNumber">
+                备案号：
+                <a href="http://www.miitbeian.gov.cn/">湘ICP备15019292号</a>
+            </p>
+        </div>
+    </div>
+</body>
+<script src="~/Scripts/jquery-3.1.0.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/artDialog/artDialog.js?skin=blue"></script>
+<script type="text/javascript">
+
+    // 警示框
+    function artAlert(res) {
+        art.dialog({
+            lock: true,
+            drag:false,
+            background: '#000',
+            opacity: 0.6,
+            icon: 'warning',
+            title:'提示',
+            content: res,
+            ok: function () {
+                createCode();
+            },
+            cancel: false
+        });
+    }
+        //完成请求
+        function success(res) {
+            if (res == "登录成功") {
+                window.location = "/Document/Index";
+            } else {
+                artAlert(res);
+                $(function () {
+                    $(".logBtn").prop("type", "button");
+                })
+            }
+        }
+       
+        var code; //在全局定义验证码
+        //产生验证码
+        function createCode() {
+            code = "";
+            var codeLength = 4;//验证码的长度
+            var checkCode = document.getElementById("code");
+            var random = new Array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
+            'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z');//随机数
+            for (var i = 0; i < codeLength; i++) {//循环操作
+                var index = Math.floor(Math.random() * 36);//取得随机数的索引（0~35）
+                code += random[index];//根据索引取得随机数加到code上
+            }
+            checkCode.value = code;//把code值赋给验证码
+        }
+
+        $(function () {
+
+            var height = document.documentElement.clientHeight;
+            $("#bodydiv").css("min-height", height);
+
+            $("#option a").mouseover(function () {
+                $(this).css("background-color", "#465c72")
+            })
+            $("#option a").mouseout(function () {
+                $(this).css("background-color", "#466c82")
+            })
+
+            $("input").focus(function () {
+                $(this).css("border", "1px solid #467ca2");
+            });
+            $("input").blur(function () {
+                $(this).css("border", "1px solid #cecece");
+            })
+
+            createCode();
+
+            // 验证码输入框失去焦点
+            $("#vCode").blur(function () {
+                var inputCode = $(this).val().toUpperCase();
+                if (inputCode.length <= 0) {
+                    $("#codeMsg").text("*请输入验证码！");
+                    
+                } else if (inputCode != code) {
+                    $("#codeMsg").text("*验证码输入错误！");
+                    
+                } else {
+                    $("#codeMsg").text("");
+                }
+            })
+
+            $("#vCode").bind("input propertychange", function () {
+                var inputCode = $(this).val().toUpperCase();
+                if (inputCode == code) {
+                    $("#codeMsg").text("");
+                }
+            })
+
+            $("#AccessID,#AccessPwd").bind("input propertychange", function () {
+                $(this).next().text("");
+            })
+           
+            $(".logBtn").click(function () {
+                var accessId = $("#AccessID").val();
+                var pwd = $("#AccessPwd").val();
+                var inputCode = $("#vCode").val().toUpperCase();
+
+                if (accessId.length == 0) {
+
+                    $("#AccessID").next().text("*账号不能为空");
+                    return;
+
+                }else if (pwd.length == 0) {
+                    
+                    $("#AccessPwd").next().text("*密码不能为空");
+                    return;
+
+                }else if (inputCode.length == 0) {
+                 
+                    $("#vCode").next().next().next().text("*验证码不能为空");
+                    return;
+
+                } else if (inputCode != code) {
+
+                    $("#vCode").next().next().next().text("*验证码输入错误！");
+                    return;
+
+                } else {
+                    $(this).prop("type","submit");
+                }
+            })
+        })
+
+        document.onkeydown = function (event) {
+            var e = event || window.event || arguments.callee.caller.arguments[0];
+            if (e && e.keyCode == 27) { // 按 Esc 
+                //要做的事情
+            }
+            if (e && e.keyCode == 113) { // 按 F2 
+                //要做的事情
+            }
+            if (e && e.keyCode == 13) { // enter 键
+                //要做的事情
+                $(".logBtn").click();
+            }
+        };
+        
+</script>

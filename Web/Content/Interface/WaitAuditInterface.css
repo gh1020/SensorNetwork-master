@@ -1,0 +1,32 @@
+﻿ .WaitAuditInterfacecContent {
+            margin: 0 auto;
+        }
+
+       .WaitAuditInterfacecContent .box ul li{
+            list-style-type: none;
+            padding-left:15px;
+       }
+        
+        /*按钮区域*/
+       .WaitAuditInterfacecContent .sub {
+            /*border:1px solid black;*/
+            width: 400px;
+            text-align: center;
+            margin: 20px auto 0px;
+        }
+
+        .WaitAuditInterfacecContent .sub input {
+                height: 35px;
+                background-color: #0094ff;
+                border: 1px solid #ffffff;
+                color: #ffffff;
+                margin-right: 20px;
+         }
+
+       .WaitAuditInterfacecContent .sub #submit {
+                width: 100px;
+            }
+
+       .WaitAuditInterfacecContent .sub #login {
+                width: 150px;
+       }

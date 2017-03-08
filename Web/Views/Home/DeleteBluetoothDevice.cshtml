@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "删除蓝牙设备";
+}
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div style="margin-left:10px;margin-right:10px;">
+        <h5>当前位置：可用接口->网关命令控制->删除设备        </h5>
+        <br/>
+        <p>            1.功能描述：        </p><fieldset>
+<pre>通过本接口可以删除（解绑）指定蓝牙设备。</pre>
+        </fieldset><br />
+        <p>            2.接口地址：        </p>
+        <fieldset>
+            <pre>http://www.gosafenet.net/api/gateway/Bluetooth/Delete?Gateway_Id={Gateway_Id}&UID={UID}</pre>
+        </fieldset><br />
+        <p>                    3.说明：                </p>
+        <fieldset>
+            <p>(1).调用方法POST</p>
+            <p>
+                (2).参数说明：<br />
+                &nbsp;&nbsp;1）Gateway_Id：网关Id<br />
+                &nbsp;&nbsp;2）UID：蓝牙设备UID
+            </p>
+        </fieldset><br />
+
+        <p>                    4.返回说明：                </p>
+        <fieldset>
+            <p>返回结果以JSON格式输出，其中，"Success"表示操作成功，"Code"表示返回代码，"Result"表示结果，返回true/false，"Error"表示错误信息，支持HTML。</p>
+            <p>例如：</p>
+            <pre>{
+  "Success": true,
+  "Code": 2,
+  "Result": true,
+  "Error": "sample string 4"
+}
+</pre>
+        </fieldset>
+
+
+    </div>
+</body>
+</html>
+

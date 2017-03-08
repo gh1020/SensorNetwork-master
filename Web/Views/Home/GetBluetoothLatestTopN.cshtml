@@ -1,0 +1,85 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div style="margin-left:10px;margin-right:10px;">
+        <h5>当前位置：查询蓝牙设备最新的N条数据        </h5><br/>
+        <p>            1.功能描述：        </p><fieldset>
+<pre>通过本接口可以根据设备蓝牙设备UID获取最近的N条传感器数据。</pre>
+        </fieldset><br />
+        <p>            2.接口地址：        </p>
+        <fieldset>
+            <pre>http://www.gosafetnet.net/api/gateway/Bluetooth/GetLatestListTopN?UID={UID}&N={N}</pre>
+        </fieldset><br />
+        <p>                    3.说明：                </p>
+        <fieldset>
+            <p>(1).调用方法Get</p>
+            <p>(2).输入参数UID指的是蓝牙设备UID，为必需顶</p>
+            <p>(3).参数N为获取最近的N条记录，必需项</p>
+        </fieldset><br />
+
+
+
+        <p>                    4.返回说明：                </p>
+        <fieldset>
+            <p>返回结果以JSON格式输出，其中，"Success"表示请求操作成功，"Result"表示数据结果集</p>
+            <p>例如：</p>
+            <pre>
+                {
+                {
+                "Success":true,
+                "Code":0,
+                "Result":
+                [{
+                "id":"57dfdf7921c9ab1efc230b0e",
+                "GatewayID":"321409000000",
+                "UID":"AATJ00017000310000000002",
+                "TestResult1":4.7,
+                "TestResult1Desc":"BloodSugar",
+                "TestResult2":29.8,
+                "TestResult2Desc":"Temperature",
+                "TestResult3":-1.0,
+                "TestResult3Desc":"",
+                "TestResult4":-1.0,
+                "TestResult4Desc":"",
+                "TestResult5":-1.0,
+                "TestResult5Desc":"",
+                "Created":"2016-09-01 00:00:00"}
+                ]}
+                }
+            </pre>
+            <p>如果传参正常，结果为空，则返回以下JSON包</p>
+            <pre>
+                 {
+                "Success":true,
+                "Code":0,
+                "Result":[]
+                }
+           </pre>
+            <p>如果传参错误，则返回以下JSON包</p>
+            <pre>
+                {
+                "Success":false,
+                "Code":0,
+                "Error":"UID不正确。"
+                }
+            </pre>
+            <p>5.运行实例</p>
+            <p><a href="https://www.gosafenet.net/api/gateway/Bluetooth/GetLatestListTopN?UID=AATJ00017000310000000002&N=10" target="_blank">
+    https://www.gosafenet.net/api/gateway/Bluetooth/GetLatestListTopN?UID=AATJ00017000310000000002&N=10
+</a>
+</p>
+        </fieldset>
+
+
+    </div>
+</body>
+</html>

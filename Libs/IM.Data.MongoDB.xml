@@ -1,0 +1,1144 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IM.Data.MongoDB</name>
+    </assembly>
+    <members>
+        <member name="T:MongoDB.Bson.Serialization.Attributes.BsonDefaultValue2Attribute">
+            <summary>
+            默认值，创建一个新的对象
+            </summary>
+        </member>
+        <member name="T:MongoDB.Bson.Serialization.Attributes.IndexAttribute">
+            <summary>
+            设置字段的索引信息
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.Ascending">
+            <summary>
+            升序排序
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.IndexType">
+            <summary>
+            索引类型
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.CloneOptions">
+            <summary>
+            克隆副本
+            </summary>
+        </member>
+        <member name="M:MongoDB.Bson.Serialization.Attributes.IndexAttribute.#ctor">
+            <summary>
+            设置字段的索引信息
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.Background">
+            <summary>
+            Gets or sets a value indicating whether to create the index in the background.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.Bits">
+            <summary>
+            Gets or sets the precision, in bits, used with geohash indexes.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.BucketSize">
+            <summary>
+            Gets or sets the size of a geohash bucket.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.DefaultLanguage">
+            <summary>
+            Gets or sets the default language.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.ExpireAfter">
+            <summary>
+            Gets or sets when documents expire (used with TTL indexes).
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.LanguageOverride">
+            <summary>
+            Gets or sets the language override.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.Max">
+            <summary>
+            Gets or sets the max value for 2d indexes.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.Min">
+            <summary>
+            Gets or sets the min value for 2d indexes.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.Name">
+            <summary>
+            Gets or sets the index name.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.Sparse">
+            <summary>
+            Gets or sets a value indicating whether the index is a sparse index.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.SphereIndexVersion">
+            <summary>
+            Gets or sets the index version for 2dsphere indexes.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.StorageEngine">
+            <summary>
+            Gets or sets the storage engine options.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.TextIndexVersion">
+            <summary>
+            Gets or sets the index version for text indexes.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.Unique">
+            <summary>
+            Gets or sets a value indicating whether the index is a unique index.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.Version">
+            <summary>
+            Gets or sets the version of the index.
+            </summary>
+        </member>
+        <member name="P:MongoDB.Bson.Serialization.Attributes.IndexAttribute.Weights">
+            <summary>
+            Gets or sets the weights for text indexes.
+            </summary>
+        </member>
+        <member name="T:MongoDB.Bson.Serialization.Serializers.StructBsonSerializer`1">
+            <summary>
+            结构体反序列化方法
+            </summary>
+            <typeparam name="TStruct">结构体</typeparam>
+        </member>
+        <member name="M:MongoDB.Driver.GeoJson2DGeographicGeoJson2DGeographicCoordinatesExtensions.DistanceTo(MongoDB.Driver.GeoJsonObjectModel.GeoJsonPoint{MongoDB.Driver.GeoJsonObjectModel.GeoJson2DGeographicCoordinates},MongoDB.Driver.GeoJsonObjectModel.GeoJsonPoint{MongoDB.Driver.GeoJsonObjectModel.GeoJson2DGeographicCoordinates})">
+            <summary>
+            计算两个点之间的距离，单位米
+            </summary>
+            <param name="pos1"></param>
+            <param name="pos2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Driver.GeoJson2DGeographicGeoJson2DGeographicCoordinatesExtensions.DistanceTo(MongoDB.Driver.GeoJsonObjectModel.GeoJson2DGeographicCoordinates,MongoDB.Driver.GeoJsonObjectModel.GeoJsonPoint{MongoDB.Driver.GeoJsonObjectModel.GeoJson2DGeographicCoordinates})">
+            <summary>
+            计算两个点之间的距离，单位米
+            </summary>
+            <param name="pos1"></param>
+            <param name="pos2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Driver.GeoJson2DGeographicGeoJson2DGeographicCoordinatesExtensions.DistanceTo(MongoDB.Driver.GeoJsonObjectModel.GeoJsonPoint{MongoDB.Driver.GeoJsonObjectModel.GeoJson2DGeographicCoordinates},MongoDB.Driver.GeoJsonObjectModel.GeoJson2DGeographicCoordinates)">
+            <summary>
+            计算两个点之间的距离，单位米
+            </summary>
+            <param name="pos1"></param>
+            <param name="pos2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Driver.GeoJson2DGeographicGeoJson2DGeographicCoordinatesExtensions.DistanceTo(MongoDB.Driver.GeoJsonObjectModel.GeoJson2DGeographicCoordinates,MongoDB.Driver.GeoJsonObjectModel.GeoJson2DGeographicCoordinates)">
+            <summary>
+            计算两个点之间的距离，单位米
+            </summary>
+            <param name="pos1"></param>
+            <param name="pos2"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MongoDB.Driver.GeoJsonObjectModel.GeoJsonGeometryExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MongoDB.Driver.GeoJsonObjectModel.GeoJsonGeometryExtensions.ToGeometry``1(``0)">
+            <summary>
+            将点类型转换为几何图形
+            </summary>
+            <typeparam name="TCoordinates">点</typeparam>
+            <param name="thz"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Driver.MongoDB_Extension.Select``3(MongoDB.Driver.IFindFluent{``0,``1},System.Linq.Expressions.Expression{System.Func{``0,``2}})">
+            <summary>
+            等同于 Project
+            </summary>
+            <typeparam name="TDocument"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <typeparam name="TNewResult"></typeparam>
+            <param name="source"></param>
+            <param name="projection"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Driver.MongoDB_Extension.Select``2(MongoDB.Driver.IAggregateFluent{``0},System.Linq.Expressions.Expression{System.Func{``0,``1}})">
+            <summary>
+            等同于 Project
+            </summary>
+            <typeparam name="TDocument"></typeparam>
+            <typeparam name="TNewResult"></typeparam>
+            <param name="source"></param>
+            <param name="projection"></param>
+            <returns></returns>
+        </member>
+        <member name="P:MongoDB.Driver.MongoQueryable`1.FilterCount">
+            <summary>
+            过滤器总数
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Driver.MongoQueryable`1.Match(MongoDB.Driver.AggregateOptions)">
+            <summary>
+            Appends a match stage to the pipeline.
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Driver.MongoQueryable`1.Clone">
+            <summary>
+            克隆一份当前的查询
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Driver.MongoQueryable`1.op_Implicit(MongoDB.Driver.MongoQueryable{`0})~MongoDB.Driver.FilterDefinition{`0}">
+            <summary>
+            隐式转换
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="M:MongoDB.Driver.MongoQueryable`1.ToList(MongoDB.Driver.FindOptions)">
+            <summary>
+            转换为列表
+            </summary>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Driver.MongoQueryable`1.ToListAsync(MongoDB.Driver.FindOptions,System.Threading.CancellationToken)">
+            <summary>
+            转换为列表
+            </summary>
+            <param name="options"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Driver.MongoQueryable`1.DeleteOne(System.Threading.CancellationToken)">
+            <summary>
+            删除一个
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Driver.MongoQueryable`1.DeleteOneAsync(System.Threading.CancellationToken)">
+            <summary>
+            删除一个
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Driver.MongoQueryable`1.DeleteMany(System.Threading.CancellationToken)">
+            <summary>
+            删除多个
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Driver.MongoQueryable`1.DeleteManyAsync(System.Threading.CancellationToken)">
+            <summary>
+            删除多个
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Driver.MongoQueryable`1.Or(System.Linq.Expressions.Expression{System.Func{`0,System.Boolean}})">
+            <summary>
+            Or 连接两个查询条件
+            </summary>
+            <param name="predicate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Driver.MongoQueryable`1.Or(MongoDB.Driver.FilterDefinition{`0})">
+            <summary>
+            Or 连接两个查询条件
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MongoDB.Driver.MongoQueryable`1.Or(MongoDB.Driver.MongoQueryable{`0})">
+            <summary>
+            Or 连接两个查询条件
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.ObjectIdStringExtension">
+            <summary>
+            涉及到ObjectId与String转换的扩展
+            </summary>
+        </member>
+        <member name="M:System.ObjectIdStringExtension.IsObjectId(System.String)">
+            <summary>
+            判断这个字符串能否转换为 ObjectId
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.ObjectIdStringExtension.AsObjectId(System.String)">
+            <summary>
+            将字符串转换为 ObjectId
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.ObjectIdGuidExtension">
+            <summary>
+            GUID/ObjectId 互转，有损失
+            </summary>
+        </member>
+        <member name="M:System.ObjectIdGuidExtension.AsGuid(System.Guid)">
+            <summary>
+            Only Use to convert a Guid that was once an ObjectId
+            </summary>
+        </member>
+        <member name="T:IM.Data.MongoDB.GeoCode.GeoCodeId">
+            <summary>
+            全国行政区域编码
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeId.id">
+            <summary>
+            00 00 00 000 000,分别是省，市，县（区），乡镇（街道），村或居委会
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeId.level">
+            <summary>
+            级别，
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeId.prov">
+            <summary>
+            所在省的id
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeId.city">
+            <summary>
+            所在市的id
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeId.county">
+            <summary>
+            所在县、城区id
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeId.vilage">
+            <summary>
+            所在乡镇id
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeId.burg">
+            <summary>
+            所在村屯id
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeId.Next">
+            <summary>
+            获取同级的下一个id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeId.Parent">
+            <summary>
+            父级
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeId.FirstChild">
+            <summary>
+            获取第一个子节点
+            </summary>
+        </member>
+        <member name="M:IM.Data.MongoDB.GeoCode.GeoCodeId.GetLevel(System.Int64)">
+            <summary>
+            获取级别
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.GeoCode.GeoCodeId.ChildrenMask(System.Int64)">
+            <summary>
+            获取级别
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.GeoCode.GeoCodeId.GetNext(System.Int64)">
+            <summary>
+            本级的下一个id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.GeoCode.GeoCodeId.GetParent(System.Int64)">
+            <summary>
+            获取上级
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.GeoCode.GeoCodeId.GetFirstChild(System.Int64)">
+            <summary>
+            获取第一个子节点
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IM.Data.MongoDB.GeoCode.GeoCodeBusiness">
+            <summary>
+            全国行政区域编码业务
+            </summary>
+        </member>
+        <member name="M:IM.Data.MongoDB.GeoCode.GeoCodeBusiness.Son``1(``0,System.Nullable{System.Int64})">
+            <summary>
+            根据id获取下级
+            </summary>
+            <param name="db"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.GeoCode.GeoCodeBusiness.FullName``1(``0,System.Collections.Generic.IEnumerable{System.Int64})">
+            <summary>
+            获取全名
+            </summary>
+            <typeparam name="TMongoDBContext"></typeparam>
+            <param name="db"></param>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.GeoCode.GeoCodeBusiness.FullName``1(``0,System.Int64)">
+            <summary>
+            获取ID的全名
+            </summary>
+            <typeparam name="TMongoDBContext"></typeparam>
+            <param name="db"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.GeoCode.GeoCodeBusiness.Tree``1(``0,System.Nullable{System.Int64},IM.Data.MongoDB.GeoCode.GeocodingLevelEnum)">
+            <summary>
+            获取id下面所有的树
+            </summary>
+            <param name="db"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.GeoCode.GeoCodeBusiness.Import``1(``0,System.String)">
+            <summary>
+            从本地文件导入
+            </summary>
+            <typeparam name="TMongoDBContext"></typeparam>
+            <param name="db"></param>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.GeoCode.GeoCodeBusiness.ConvertById(System.Int64)">
+            <summary>
+            根据id，转换成省、市等各级的id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IM.Data.MongoDB.GeoCode.GeoCodingName">
+            <summary>
+            行政区域名称结构体
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodingName.id">
+            <summary>
+            id
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodingName.prov">
+            <summary>
+            省
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodingName.city">
+            <summary>
+            市
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodingName.county">
+            <summary>
+            县/区
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodingName.vilage">
+            <summary>
+            乡镇/街道
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodingName.burg">
+            <summary>
+            村/社区
+            </summary>
+        </member>
+        <member name="T:IM.Data.MongoDB.GeoCode.GeocodingLevelEnum">
+            <summary>
+            行政区域级别
+            </summary>
+        </member>
+        <member name="F:IM.Data.MongoDB.GeoCode.GeocodingLevelEnum.prov">
+            <summary>
+            省
+            </summary>
+        </member>
+        <member name="F:IM.Data.MongoDB.GeoCode.GeocodingLevelEnum.city">
+            <summary>
+            市
+            </summary>
+        </member>
+        <member name="F:IM.Data.MongoDB.GeoCode.GeocodingLevelEnum.county">
+            <summary>
+            县/城区
+            </summary>
+        </member>
+        <member name="F:IM.Data.MongoDB.GeoCode.GeocodingLevelEnum.village">
+            <summary>
+            村镇/社区
+            </summary>
+        </member>
+        <member name="F:IM.Data.MongoDB.GeoCode.GeocodingLevelEnum.burg">
+            <summary>
+            村/街道办
+            </summary>
+        </member>
+        <member name="T:IM.Data.MongoDB.GeoCode.GeoCodeModel">
+            <summary>
+            全国行政区域编码
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeModel.id">
+            <summary>
+            00 00 00 000 000,分别是省，市，县（区），乡镇（街道），村或居委会
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeModel.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeModel.level">
+            <summary>
+            级别，
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeModel.prov">
+            <summary>
+            所在省的id
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeModel.city">
+            <summary>
+            所在市的id
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeModel.county">
+            <summary>
+            所在县、城区id
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeModel.vilage">
+            <summary>
+            所在乡镇id
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeModel.burg">
+            <summary>
+            所在村屯id
+            </summary>
+        </member>
+        <member name="M:IM.Data.MongoDB.GeoCode.GeoCodeModel.Next">
+            <summary>
+            本级的下一个id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.GeoCode.GeoCodeModel.Next(System.Int64)">
+            <summary>
+            本级的下一个id
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.GeoCode.GeoCodeModel.Parent(System.Int64)">
+            <summary>
+            获取上级
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.GeoCode.GeoCodeModel.FirstChild(System.Int64)">
+            <summary>
+            获取第一个子节点
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IM.Data.MongoDB.GeoCode.GeoCodeQueryParam">
+            <summary>
+            用于rest的查询参数
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeQueryParam.areaid">
+            <summary>
+            所属区域
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.GeoCode.GeoCodeQueryParam.areanext">
+            <summary>
+            获取的下一个i，用于查询
+            </summary>
+        </member>
+        <member name="T:IM.Data.MongoDB.IMongoDBContext">
+            <summary>
+            数据库实体接口
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.IMongoDBContext.ConnectionString">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.IMongoDBContext.GridFS">
+            <summary>
+            文件系统
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.IMongoDBContext.MongoDatabase">
+            <summary>
+            数据库
+            </summary>
+        </member>
+        <member name="M:IM.Data.MongoDB.IMongoDBContext.GetCollection``1(System.String)">
+            <summary>
+            获取一个集合
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="name">名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.IMongoDBContext.Add``1(``0)">
+            <summary>
+            插入一条记录
+            </summary>
+            <typeparam name="T">需要插入的类型</typeparam>
+            <param name="item">数据</param>
+        </member>
+        <member name="M:IM.Data.MongoDB.IMongoDBContext.AddAsync``1(``0)">
+            <summary>
+            异步插入一条记录
+            </summary>
+            <typeparam name="T">需要插入的类型</typeparam>
+            <param name="item">数据</param>
+        </member>
+        <member name="M:IM.Data.MongoDB.IMongoDBContext.BulkInsert``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            批量插入
+            </summary>
+            <typeparam name="T">需要插入的类型</typeparam>
+            <param name="items">数据列表</param>
+        </member>
+        <member name="M:IM.Data.MongoDB.IMongoDBContext.BulkInsertAsync``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            异步批量插入
+            </summary>
+            <typeparam name="T">需要插入的类型</typeparam>
+            <param name="items">数据列表</param>
+        </member>
+        <member name="M:IM.Data.MongoDB.IMongoDBContext.getNextSequence(System.Type)">
+            <summary>
+            获取下一个递增值
+            </summary>
+            <param name="type">类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.IMongoDBContext.getNextSequence(System.String)">
+            <summary>
+            获取下一个递增值
+            </summary>
+            <param name="type">类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.IMongoDBContext.getNextSequence``1">
+            <summary>
+            获取下一个递增值
+            </summary>
+            <param name="type">类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.IMongoDBContext.GetConfig``1(System.String)">
+            <summary>
+            获取配置项
+            </summary>
+            <typeparam name="TValue">值类型</typeparam>
+            <param name="id">id</param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.IMongoDBContext.SetConfig``1(``0,System.String)">
+            <summary>
+            设置配置项
+            </summary>
+            <typeparam name="TValue">值类型</typeparam>
+            <param name="value">值</param>
+            <param name="id">id</param>
+        </member>
+        <member name="M:IM.Data.MongoDB.IMongoDBContext.AsQueryable2``1(System.String)">
+            <summary>
+            构造查询对象
+            </summary>
+            <typeparam name="TDocument"></typeparam>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.AsQueryable2``1(System.String)">
+            <summary>
+            构造查询对象
+            </summary>
+            <typeparam name="TDocument"></typeparam>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.GetConfig``1(System.String)">
+            <summary>
+            获取配置项
+            </summary>
+            <typeparam name="TValue">值类型</typeparam>
+            <param name="id">id</param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.GetConfigId``1">
+            <summary>
+            根据类型获取id
+            </summary>
+            <typeparam name="TValue"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.GetConfigId(System.Type)">
+            <summary>
+            根据类型获取id
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.SetConfig``1(``0,System.String)">
+            <summary>
+            设置配置项
+            </summary>
+            <typeparam name="TValue">值类型</typeparam>
+            <param name="value">值</param>
+            <param name="id">id</param>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.getNextSequence``1">
+            <summary>
+            获取下一个递增值
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.getNextSequence(System.Type)">
+            <summary>
+            获取下一个递增值
+            </summary>
+            <param name="type">类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.getNextSequence(System.String)">
+            <summary>
+            获取下一个递增值
+            </summary>
+            <param name="name">名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.getLastSequence``1">
+            <summary>
+            获取最后一个递增值
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.getLastSequence(System.Type)">
+            <summary>
+            获取最后一个递增值
+            </summary>
+            <param name="type">类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.getLastSequence(System.String)">
+            <summary>
+            获取最后一个递增值
+            </summary>
+            <param name="name">名称</param>
+            <returns></returns>
+        </member>
+        <member name="P:IM.Data.MongoDB.MongoDBContext`1.GridFS">
+            <summary>
+            文件系统
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.MongoDBContext`1.MongoDatabase">
+            <summary>
+            数据库
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.MongoDBContext`1.ConnectionString">
+            <summary>
+            连接字符串
+            </summary>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.RegisterClassMap">
+            <summary>
+            注册
+            </summary>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.#ctor(System.String)">
+            <summary>
+            初始化数据库
+            </summary>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.InitializeMongoCollection">
+            <summary>
+            注册
+            </summary>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.BuildIndexModel``1(MongoDB.Bson.Serialization.Attributes.IndexAttribute,System.String,System.Collections.Generic.List{System.String},System.String)">
+            <summary>
+            通过类型构建索引
+            </summary>
+            <typeparam name="TDocument"></typeparam>
+            <param name="indexed">索引的属性</param>
+            <param name="property_name">属性名字</param>
+            <param name="existed_indexes">已经存在的索引</param>
+            <param name="prefix_name">索引前缀</param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.GetCollection``1(System.String)">
+            <summary>
+            获取一个集合，等同于
+            </summary>
+            <typeparam name="T">类型</typeparam>
+            <param name="name">名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.BulkInsert``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            批量插入
+            </summary>
+            <typeparam name="T">需要插入的类型</typeparam>
+            <param name="items">数据列表</param>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.BulkInsertAsync``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            异步批量插入
+            </summary>
+            <typeparam name="T">需要插入的类型</typeparam>
+            <param name="items">数据列表</param>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.Add``1(``0)">
+            <summary>
+            插入一条记录
+            </summary>
+            <typeparam name="T">需要插入的类型</typeparam>
+            <param name="item">数据</param>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.AddAsync``1(``0)">
+            <summary>
+            异步插入一条记录
+            </summary>
+            <typeparam name="T">需要插入的类型</typeparam>
+            <param name="item">数据</param>
+        </member>
+        <member name="M:IM.Data.MongoDB.MongoDBContext`1.OnInitialization">
+            <summary>
+            第一次初始化完成将执行该方法
+            </summary>
+        </member>
+        <member name="T:IM.Data.MongoDB.Queue.Message`1">
+            <summary>
+            队列消息的消息
+            </summary>
+            <typeparam name="TData">数据</typeparam>
+        </member>
+        <member name="P:IM.Data.MongoDB.Queue.Message`1.name">
+            <summary>
+            名称，用于区分不同的队列
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.Queue.Message`1.status">
+            <summary>
+            队列消息状态
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.Queue.Message`1.data">
+            <summary>
+            附加数据
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.Queue.Message`1.delayed">
+            <summary>
+            计划执行时间，仅对延迟队列有效
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.Queue.Message`1.executed">
+            <summary>
+            实际执行时间
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.Queue.Message`1.expired">
+            <summary>
+            超期时间，过了这个时间将不再执行
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.Queue.Message`1.created">
+            <summary>
+            入队时间
+            </summary>
+        </member>
+        <member name="T:IM.Data.MongoDB.Queue.MessageStatus">
+            <summary>
+            队列消息状态
+            </summary>
+        </member>
+        <member name="F:IM.Data.MongoDB.Queue.MessageStatus.valid">
+            <summary>
+            有效
+            </summary>
+        </member>
+        <member name="F:IM.Data.MongoDB.Queue.MessageStatus.invalid">
+            <summary>
+            已经失效
+            </summary>
+        </member>
+        <member name="T:IM.Data.MongoDB.Queue.MessageQueue`1">
+            <summary>
+            消息队列
+            </summary>
+            <typeparam name="TData"></typeparam>
+        </member>
+        <member name="P:IM.Data.MongoDB.Queue.MessageQueue`1.Name">
+            <summary>
+            队列名称
+            </summary>
+        </member>
+        <member name="F:IM.Data.MongoDB.Queue.MessageQueue`1.is_delayed_queue">
+            <summary>
+            是否是延迟队列
+            </summary>
+        </member>
+        <member name="M:IM.Data.MongoDB.Queue.MessageQueue`1.#ctor(System.Boolean)">
+            <summary>
+            以类型名命名的队列
+            </summary>
+            <param name="is_delayed_queue">是否是延迟队列</param>
+        </member>
+        <member name="M:IM.Data.MongoDB.Queue.MessageQueue`1.#ctor(System.String,System.Boolean)">
+            <summary>
+            队列名字
+            </summary>
+            <param name="name">名称</param>
+            <param name="is_delayed_queue">是否是延迟队列</param>
+        </member>
+        <member name="F:IM.Data.MongoDB.Queue.MessageQueue`1.queryOptions">
+            <summary>
+            查询选项
+            </summary>
+        </member>
+        <member name="M:IM.Data.MongoDB.Queue.MessageQueue`1.Dequeue(IM.Data.MongoDB.IMongoDBContext,`0@,System.Int32,System.Threading.CancellationToken)">
+            <summary>
+            从队列从取数据
+            </summary>
+            <param name="db"></param>
+            <param name="wait_sconds">等待的秒数，-1表示无限等待,0表示查询一次</param>
+            <param name="ct"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Data.MongoDB.Queue.MessageQueue`1.Enqueue(IM.Data.MongoDB.IMongoDBContext,`0,System.Nullable{System.DateTime},System.Nullable{System.DateTime})">
+            <summary>
+            入队
+            </summary>
+            <param name="db">数据库</param>
+            <param name="data">数据</param>
+            <param name="delayed">执行时间，当是延迟队列时有效</param>
+            <param name="expired">过期时间</param>
+        </member>
+        <member name="M:IM.Data.MongoDB.Queue.MessageQueue`1.Cancel(IM.Data.MongoDB.IMongoDBContext,MongoDB.Driver.FilterDefinition{IM.Data.MongoDB.Queue.Message{`0}})">
+            <summary>
+            取消队列中的任务
+            </summary>
+            <param name="db">数据库</param>
+            <param name="filter">过滤条件</param>
+        </member>
+        <member name="T:IM.Data.MongoDB.Sequence">
+            <summary>
+            自增字段的序列
+            </summary>
+        </member>
+        <member name="T:IM.Data.MongoDB.SystemConfiguration`1">
+            <summary>
+            菜单
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.SystemConfiguration`1.value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.SystemConfiguration`1.modified">
+            <summary>
+            修改时间
+            </summary>
+        </member>
+        <member name="P:IM.Data.MongoDB.SystemConfiguration`1.created">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="T:Newtonsoft.Json.GeoJsonPoint2DGeographicCoordinatesConverter">
+            <summary>
+            将  GeoJsonPoint&lt;GeoJson2DGeographicCoordinates&gt;  转为 { lng:108,lat:31.1 } 样式
+            </summary>
+        </member>
+        <member name="T:Newtonsoft.Json.GeoJsonPolygon2DGeographicCoordinatesConverter">
+            <summary>
+            将  GeoJsonPolygon&lt;GeoJson2DGeographicCoordinates&gt;  转为 [{ lng:108,lat:31.1 },{ lng:108,lat:31.1 }] 样式
+            </summary>
+        </member>
+        <member name="T:Newtonsoft.Json.GeoJson2DGeographicCoordinatesConverter">
+            <summary>
+            将GeoJson2DGeographicCoordinates 转为 { lng:108,lat:31.1 } 样式
+            </summary>
+        </member>
+        <member name="T:MongoAppender.MongoDbAppender">
+            <summary>
+            The log4net appender. Saves log records to a mongo database.
+            </summary>
+        </member>
+        <member name="F:MongoAppender.MongoDbAppender.fields">
+            <summary>
+            The list of log fields to save. Initialised from the log4net configuration
+            </summary>
+        </member>
+        <member name="P:MongoAppender.MongoDbAppender.ConnectionString">
+            <summary>
+            Gets or sets the MongoDB database connection in the format:
+            mongodb://[username:password@]host1[:port1][,host2[:port2],...[,hostN[:portN]]][/[database][?options]]
+            If no database specified, default to "log4net"
+            </summary>
+        </member>
+        <member name="P:MongoAppender.MongoDbAppender.ConnectionStringName">
+            <summary>
+            Gets or sets the connectionString name to use in the connectionStrings section of the *.config file
+            If not specified or connectionString name does not exist will use ConnectionString value
+            </summary>
+        </member>
+        <member name="P:MongoAppender.MongoDbAppender.CollectionName">
+            <summary>
+            Gets or sets the name of the collection in the database. Defaults to "logs"
+            </summary>
+        </member>
+        <member name="P:MongoAppender.MongoDbAppender.Collection">
+            <summary>
+            Gets or sets Mongo collection to write to. Initialised when the appender is activated
+            </summary>
+        </member>
+        <member name="M:MongoAppender.MongoDbAppender.AddField(MongoAppender.MongoAppenderField)">
+            <summary>
+            Adds an entry from the config to the list of fields to log
+            </summary>
+            <param name="field">The field to log</param>
+        </member>
+        <member name="M:MongoAppender.MongoDbAppender.ActivateOptions">
+            <summary>
+            Initialize the appender based on the options set
+            </summary>
+            <remarks>
+            <para>
+            This is part of the <see cref="T:log4net.Core.IOptionHandler"/> delayed object
+            activation scheme. The <see cref="M:MongoAppender.MongoDbAppender.ActivateOptions"/> method must 
+            be called on this object after the configuration properties have
+            been set. Until <see cref="M:MongoAppender.MongoDbAppender.ActivateOptions"/> is called this
+            object is in an undefined state and must not be used. 
+            </para>
+            <para>
+            If any of the configuration properties are modified then 
+            <see cref="M:MongoAppender.MongoDbAppender.ActivateOptions"/> must be called again.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:MongoAppender.MongoDbAppender.Append(log4net.Core.LoggingEvent)">
+            <summary>
+            Appends a logging event to Mongo
+            </summary>
+            <param name="loggingEvent">The logging event</param>
+        </member>
+        <member name="M:MongoAppender.MongoDbAppender.SendBuffer(log4net.Core.LoggingEvent[])">
+            <summary>
+            Inserts the events into the database.
+            </summary>
+            <param name="events">The events to insert into the database.</param>
+            <remarks>
+            <para>
+            Insert all the events specified in the <paramref name="events"/>
+            array into the database.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:MongoAppender.MongoDbAppender.GetCollection">
+            <summary>
+            Gets the Mongo collection that the logs will be written to. If one isn't specified 
+            in the configuration then it defaults to 'logs'.
+            </summary>
+            <returns>The Mongo collection</returns>
+        </member>
+        <member name="M:MongoAppender.MongoDbAppender.GetConnectionString">
+            <summary>
+            Gets the connection string by name or by using the connection string property if unavailable.
+            </summary>
+            <returns>The connection string</returns>
+        </member>
+        <member name="M:MongoAppender.MongoDbAppender.GetDatabase">
+            <summary>
+            Gets the Mongo database based on the connection string. IF the database name isn't 
+            present in the connection string it defaults to 'log4net'.
+            </summary>
+            <returns>The Mongo database</returns>
+        </member>
+        <member name="M:MongoAppender.MongoDbAppender.BuildBsonDocument(log4net.Core.LoggingEvent)">
+            <summary>
+            Builds the BSON document to send to Mongo from the log4net LoggingEvent.
+            </summary>
+            <param name="log">The logging event</param>
+            <returns>The BSON document</returns>
+        </member>
+        <member name="T:MongoAppender.MongoAppenderField">
+            <summary>
+            Describes a single log field entry from the configuration file.
+            </summary>
+        </member>
+        <member name="P:MongoAppender.MongoAppenderField.Name">
+            <summary>
+            Gets or sets the name of the log field
+            </summary>
+        </member>
+        <member name="P:MongoAppender.MongoAppenderField.Layout">
+            <summary>
+            Gets or sets the log layout type that will format the final log entry
+            </summary>
+        </member>
+        <member name="P:MongoAppender.MongoAppenderField.Value">
+            <summary>
+            Gets or sets the log format value
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,45 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div style="margin-left:10px;margin-right:10px;">
+        <h5>当前位置：可用接口->网关查询->查询网关是否在线        </h5><br/>
+        <p>            1.功能描述：        </p><fieldset><br />
+<pre>通过本接口可以获取指定网关是否在线信息。</pre>
+        </fieldset><br />
+        <p>            2.接口地址：        </p>
+        <fieldset>
+            <pre>http://www.gosafetnet.net/api/gateway/IsGatewayOnline?id={id}</pre>
+        </fieldset><br />
+        <p>                    3.说明：                </p>
+        <fieldset>
+            <p>(1).调用方法Get</p>
+        <p>(2).输入参数id指的是网关ID</p>
+        <p>(3).参数id为必需项</p>
+        </fieldset><br />
+
+
+
+        <p>                    4.返回说明：                </p>
+        <fieldset>
+            <pre>返回结果以JSON格式输出，其中，"Success"表示请求操作成功，"Result"表示是否在线，返回true/false</pre>
+            <p>例如：</p>
+            <pre>{
+  "Success": true,
+  "Code": 0,
+  "Result":false
+}</pre>
+        </fieldset>
+
+
+    </div>
+</body>
+</html>

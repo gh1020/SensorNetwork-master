@@ -1,0 +1,87 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>联桥网云•开放平台</title>
+    <link href="~/Content/Interface/AddInterface.css" rel="stylesheet" />
+    <link href="~/Content/Interface/WaitAuditInterface.css" rel="stylesheet" />
+
+    <style type="text/css">
+        *{
+            font-family:"细圆"
+        }
+        body {
+            margin: 0px;
+        }
+        #Header {
+           width: 100%;
+           min-width:1280px;
+           height: 90px;
+           margin: 0 auto;
+           position: fixed;
+           top: 0;
+           border-bottom: 1px solid #e7e7e7;
+           z-index: 100;
+           box-shadow: 0 0 3px rgba(89,89,89,.25);
+           background-color:#FFF;
+        }
+
+        #Content {
+        
+            padding: 120px 0 71px;
+            width: 100%;
+           
+        }
+
+        #Footter {
+            clear: both;
+            width:100%;
+            height:80px;
+            padding-top:20px;
+            margin-top:30px; 
+            background-color: #467ca2;
+            position:absolute;
+            bottom:0;
+            left:0;
+            text-align:center;
+        }
+      #Footter p{
+          color:black;
+      }
+      #Footter a:hover{
+          color:black;
+          font-weight: bold;
+      }
+      #Footter a:link,a:visited{
+          color:black;
+      }
+
+    </style>
+</head>
+<body>
+        <div id="Container" style="position:relative;min-width:1280px;">
+            <div id="Header">@{Html.RenderAction("Top", "Document");}</div>
+            <div id="Content">
+                @{Html.RenderAction("Menu", "Document");}
+            </div>
+            <div id="Footter">
+                <p style="font-size:14px;">Copyright &copy 2015 &nbsp;<a href="http://www.gosafenet.com" target="_Blank">联桥网云信息科技（长沙）有限公司</a> &nbsp;版权所有 &nbsp;</p>
+                <p style="font-size:12px;">公司地址:湖南省长沙市高新区文轩路27号麓谷企业广场金融科技大厦16楼1606室 电话：0731-82858885 传真：0731-82858908</p>
+                <p style="font-size:12px;" >备案号：<a href="http://www.miitbeian.gov.cn/" target="_Blank">湘ICP备15019292号</a></p>
+            </div>
+        </div>
+</body>
+</html>
+<script src="~/Scripts/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        var height = document.documentElement.clientHeight;
+        $("#Container").css("min-height", height);
+        
+    });
+</script>

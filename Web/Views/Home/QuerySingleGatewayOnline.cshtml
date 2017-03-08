@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "查询单个网关是否在线";
+}
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div style="margin-left:10px;margin-right:10px;">
+        <h5>当前位置：可用接口->网关查询->查询单个网关是否在线        </h5><br/>
+        <p>            1.功能描述：        </p><fieldset>
+<pre>通过本接口可以查询某台网关是否在线。</pre>
+        </fieldset><br />
+        <p>            2.接口地址：        </p>
+        <fieldset>
+            <pre>http://www.gosafenet.net/api/gateway/IsGatewayOnline?id={id}</pre>
+        </fieldset><br />
+        <p>                    3.说明：                </p>
+        <fieldset>
+            <p>(1).调用方法GET</p>
+            <p>(2).参数id为网关id，为必填项</p>
+        </fieldset><br />
+
+
+
+        <p>                    4.返回说明：                </p>
+        <fieldset>
+
+            <p>返回结果以JSON格式输出，其中，"Success"表示操作成功，"Code"表示返回代码，"Result"表示结果，true表示在线，false表示离线，"Error"表示错误信息，支持HTML。</p>
+            <p>例如：</p>
+            <pre>{
+  "Success": true,
+  "Code": 2,
+  "Result": true,
+  "Error": "sample string 4"
+}
+</pre>
+        </fieldset>
+
+
+    </div>
+</body>
+</html>
+
+

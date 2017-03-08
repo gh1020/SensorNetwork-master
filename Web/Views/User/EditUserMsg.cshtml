@@ -1,0 +1,376 @@
+﻿@using SensorNetwork.Data.Models
+@model SensorNetwork.Data.Models.ApplyCloudPlatform
+@{
+    ViewBag.Title = "Edit";
+}
+<head>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            font-family: "细圆";
+        }
+        /*内容*/
+        #content {
+            margin: 20px 0px;
+            padding-bottom:100px;
+            /*border:1px solid red;*/
+        }
+        ol {
+            margin-left:100px; 
+            padding-left:0;
+            /*border:1px solid green;*/
+        }
+            ol li {
+                padding-left:0;
+                margin-bottom: 26px;
+                list-style-type: none;
+                list-style-position: hanging;
+                /*border:1px solid #4cff00;*/
+                /*padding-left:45px;*/
+            }
+        li label {
+            color: #5c5c5c;
+            font-size: 16px;
+            width: 100px;
+            display: inline-block;
+        }
+
+        ol input {
+            border: 1px solid #cecece;
+            height: 45px;
+            width: 345px;
+            border-radius: 30px;
+            padding-left: 10px;
+            outline: none;
+        }
+
+
+        /*登录按钮*/
+        #regisBtn {
+            background-color: #467ca2;
+            border: none;
+            border-radius: 30px;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 24px;
+            height: 55px;
+            margin-left:206px;
+            text-align: center;
+            width: 345px;
+        }
+
+        .errMsg {
+            color: red;
+            text-align: left;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+         .reLoginDiv{
+            margin-top:100px;
+            text-align:center;
+        }
+        .reLoginDiv span{
+           font-size:14px;
+        }
+    </style>
+</head>
+<body>
+            <div id="content">
+                @using (Ajax.BeginForm(new AjaxOptions { HttpMethod = "post", OnSuccess = "success" }))
+                {
+                    if (ViewData["Platform"] != null)
+                    {
+                        var platForm = ViewData["Platform"] as ApplyCloudPlatform;
+                        var htts = platForm.HTTPInterface.Split(new Char[]{ ';'});
+                        <ol>
+                            <li>
+                                <label>云平台名称</label>
+                                <input type="text" name="PlatformName" id="PlatformName" value="@platForm.PlatformName" placeholder="请输入您的应用平台名称" />
+                                <span class="errMsg"></span>
+                            </li>
+                            <li>
+                                <label>账号</label>
+                                <input type="text" name="AccessID" id="AccessID" value="@platForm.AccessID" placeholder="数字或字母中间不能有空格，最少为6个字符" readonly="readonly" />
+                                <span class="errMsg">不可更改</span>
+                            </li>
+                            <li>
+                                <label>行业类别</label>
+                                <input type="text" name="acCategory" id="channel" value="@platForm.CategoryName" readonly="readonly"/>
+                                <span class="errMsg">不可更改</span>
+                            </li>
+                            <li>
+                                <label>Http接口</label>
+                                <input type="text" name="HTTPInterfaces" value="@htts[0]" placeholder="格式如http://202.93.59.16/api/Sensor" class="HttpInterfaces" />
+                                <span class="errMsg"></span>
+                                <img src="~/Content/images/add.png" id="add" style="height:45px;width:45px;margin-left:10px;margin-bottom:-15px;" />
+                            </li>
+                            @for (int i = 1; i <= htts.Length - 1; i++)
+                            {
+                            <li>
+                                  <label></label>
+                                  <input type='text' name='HTTPInterfaces' class='newAddInter' id='@i' placeholder='格式如http://202.93.59.16/api/Sensor' value="@htts[i]" onblur="check(@i);" style="margin-left:0px;"/>
+                                  <span class='errMsg'></span>
+                                  <img src='../Content/images/remove.png' class='remove' id='@i' onclick="remove('@i');" style='height:45px;width:45px;margin-left:10px;margin-bottom:-15px;' />
+                            </li>
+                            }
+                        </ol>
+                        <input type="button" name="submit" value="提交修改" id="regisBtn" />
+                    }
+                    else
+                    {
+                        <div class="reLoginDiv"><span>登录信息失效，请您重新<a style="color:blue;" href="#" class="reLogin">登录</a></span></div>
+                    }
+
+                }
+            </div>
+</body>
+<script src="~/Scripts/jquery-3.1.0.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<script src="~/Scripts/artDialog/artDialog.js?skin=blue"></script>
+<script src='~/Scripts/artDialog/plugins/iframeTools.source.js' type="text/javascript"></script>
+<script src='~/Scripts/artDialog/plugins/iframeTools.js' type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    function originreload() {
+
+        var win = art.dialog.open.origin;//来源页面  
+
+        win.location.reload();
+
+    }
+    function artAlert(res) {
+        art.dialog({
+            lock: true,
+            drag: false,
+            background: '#000',
+            opacity: 0.6,
+            content: res,
+            title:'提示',
+            icon: 'warning',
+            ok: function () {
+                this.close();
+            },
+            cancel: false
+        });
+    }
+    function success(res) {
+        if (res == "修改成功") {
+
+            art.dialog({
+                drag: false,
+                icon: 'success',
+                time: 1.5,
+                title:'提示',
+                content: res,
+                close: function () {
+                    setTimeout('originreload()', 1000);
+                }
+            });
+        } else {
+            artAlert(res);
+        }
+     }
+
+    function check(item) {
+        $(function(){
+
+            $('.reLogin').click(function () {
+                setTimeout('originreload()', 1);
+            })
+
+            var httpStr = $('#'+item).val().trim();
+            if (httpStr.length == 0) {
+                $('#'+item).next().text("*Http接口不能为空！");
+
+            } else {
+                var strRegex = "((http|ftp|https)://)(([a-zA-Z0-9\._-]+\.[a-zA-Z]{2,6})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9\&%_\./-~-]*)?";
+                var re = new RegExp(strRegex);
+                if (!re.test(httpStr)) {
+                    $('#'+item).next().text("*接口格式不正确");
+                } else {
+                    $('#'+item).next().text("");
+                }
+            }
+        })
+        
+    }
+
+        $(function () {
+
+            var height = document.documentElement.clientHeight;
+            $("#bodydiv").css("min-height", height);
+
+            // 平台名称
+            $("#PlatformName").blur(function () {
+                var name = $(this).val().trim();
+                if (name.length == 0) {
+                    $(this).next().text("*平台名称不能为空");
+                }
+            })
+
+            $("#PlatformName").bind("input propertychange", function () {
+                var name = $(this).val().trim();
+                if (name.length != 0) {
+                    $(this).next().text("");
+                }
+            })
+
+
+            // 接口
+            $(".HttpInterfaces").blur(function () {
+                var httpStr = $(this).val().trim();
+                if (httpStr.length == 0) {
+                    $(this).next().text("*Http接口不能为空");
+             
+                } else {
+                    var strRegex = "((http|ftp|https)://)(([a-zA-Z0-9\._-]+\.[a-zA-Z]{2,6})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9\&%_\./-~-]*)?";
+                    var re = new RegExp(strRegex);
+                    if (!re.test(httpStr)) {
+                        $(this).next().text("*接口格式不正确");
+                    } else {
+                        $(this).next().text("");
+                    }
+                }
+            })
+            $(".HttpInterfaces").bind("input propertychange", function () {
+                var httpStr = $(this).val().trim();
+                if (httpStr.length != 0)
+                {
+                    $(this).next().text("");
+
+                }
+            })
+
+            // 为新增的接口输入框绑定事件
+            $(document).on("focus", ".newAddInter", function () {
+                $(this).css("border", "1px solid #467ca2");
+            })
+           
+
+             $("#option a").mouseover(function () {
+                    $(this).css("background-color", "#465c72")
+             })
+             $("#option a").mouseout(function () {
+                    $(this).css("background-color", "#466c82")
+             })
+
+             $("input").focus(function () {
+                    $(this).css("border", "1px solid #467ca2");
+             });
+             $("input").blur(function () {
+                    $(this).css("border", "1px solid #cecece");
+             })
+
+            var con = 1;
+            $("#add").click(function () {
+                var removeId = "remove" + con.toString();
+                var addInputId = "newAddInter" + con.toString();
+                $("ol").append("<li><label></label><input type='text' name='HTTPInterfaces' class='newAddInter' id='" + addInputId + "' placeholder='格式如http://202.93.59.16/api/Sensor'/><span class='errMsg'></span><img src='../Content/images/remove.png' class='remove' id='" + removeId + "'style='height:45px;width:45px;margin-left:18px;margin-bottom:-15px;'/></li>")
+                $(document).on("click", "#" + removeId, function () {
+                    $("#" + removeId).parent().remove();
+                   
+                })
+
+                $(document).on("blur", "#" + addInputId, function () {
+                    $(this).css("border", "1px solid #cecece");
+                    var httpStr = $(this).val().trim();
+                    if (httpStr.length == 0) {
+                     
+                        $(this).next().text("*Http接口不能为空");
+                       
+                    } else {
+                        var strRegex = "((http|ftp|https)://)(([a-zA-Z0-9\._-]+\.[a-zA-Z]{2,6})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9\&%_\./-~-]*)?";
+                        var re = new RegExp(strRegex);
+                        if (!re.test(httpStr)) {
+                            $(this).next().text("*接口格式不正确");
+                           
+                        } else {
+                            $(this).next().text("");
+                        }
+                    }
+                })
+
+                $(document).on("input propertychange", "#" + addInputId, function () {
+                    var httpStr = $(this).val().trim();
+                    if (httpStr.length != 0) {
+                        $(this).next().text("");
+                    }
+                })
+
+                con++;
+            })
+
+            $("#regisBtn").click(function () {
+                // 平台名称
+                var platName = $("#PlatformName").val().trim();
+                if (platName.length == 0) {
+                    artAlert("平台名称不能为空");
+                    return;
+                }
+
+                // 接口
+                var httpStr = $(".HttpInterfaces").val().trim();
+                var strRegex = "((http|ftp|https)://)(([a-zA-Z0-9\._-]+\.[a-zA-Z]{2,6})|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9\&%_\./-~-]*)?";
+                var reg = new RegExp(strRegex);
+                if (httpStr.length == 0) {
+                    artAlert("接口不能为空");
+                    return;
+                } else if (!reg.test(httpStr)) {
+                    artAlert("接口格式不正确");
+                    return;
+                }
+
+                // 新增接口
+                var result = true;
+                var des = "";
+                $(".newAddInter").each(function (key, value) {
+                    var addHttpStr = $(this).val();
+                    if (addHttpStr.length == 0) {
+                        des = "接口不能为空";
+                        result = false;
+                    } else if (!reg.test(addHttpStr)) {
+                        des = "接口格式不正确";
+                        result = false;
+                    }
+                });
+
+                if (!result) {
+                    artAlert(des);
+                    return;
+                }
+
+                $(this).prop("type", "submit");
+            })
+
+            document.onkeydown = function (event) {
+                var e = event || window.event || arguments.callee.caller.arguments[0];
+                if (e && e.keyCode == 27) { // 按 Esc 
+                    //要做的事情
+                }
+                if (e && e.keyCode == 113) { // 按 F2 
+                    //要做的事情
+                }
+                if (e && e.keyCode == 13) { // enter 键
+                    //要做的事情
+                    $("#regisBtn").click();
+                }
+            };
+        })
+        function remove(idString) {
+            $(function () {
+                $("#" + idString).parent().remove();
+            })
+        }
+
+</script>
+
+
+
+
+
+

@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "查询蓝牙设备最新数据";
+}
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div style="margin-left:10px;margin-right:10px;">
+        <h5>当前位置：可用接口->设备数据查询->查询设备最新数据        </h5><br/>
+        <p>            1.功能描述：        </p><fieldset>
+<pre>通过本接口可以查询蓝牙设备的最新数据。</pre>
+        </fieldset><br />
+        <p>            2.接口地址：        </p>
+        <fieldset>
+            <pre>http://www.gosafenet.net/api/gateway/Bluetooth/GetLatestListTopN?UID={UID}&N=1</pre>
+        </fieldset><br />
+        <p>                    3.说明：                </p>
+        <fieldset>
+            <p>(1).调用方法GET</p>
+            <p>
+                (2).网关参数说明：<br />
+                &nbsp;&nbsp;1）UID：蓝牙设备UID
+            </p>
+        </fieldset><br />
+
+
+
+        <p>                    4.返回说明：                </p>
+        <fieldset>
+            <pre>参数说明：</pre>
+            <p>
+                (1).Type:数据包类型，01代表已解析，02代表未解析，上传的是原始数据包<br />
+                (2).GatewayID:网关ID<br />
+                (3).UID:蓝牙设备UID<br />
+                (4).TestResult:测试结果<br />
+                (5).TestResultDesc:测试结果描述<br />
+                (6).TestTime:测试时间<br />
+
+            </p>
+            <p>返回结果以JSON格式输出，其中，"Success"表示操作成功，"Code"表示返回代码，"Result"表示结果，返回true/false，"Error"表示错误信息，支持HTML。</p>
+            <p>例如：</p>
+            <pre>{
+    "Success": true,
+    "Code": 2,
+    "Type":"01",  --01代表已经解析过，02代表未解析，上传的是原始协议数据包
+    "GatewayID":"354627828",--网关ID
+    "UID":"ABTJ00017000110000000002",--传感器设备ID
+    "Result":[
+        {
+            "TestResult":229.0,
+            "TestResultDesc":"BloodPressureSystolic"
+        },
+        {
+            "TestResult":157.0,
+            "TestResultDesc":"BloodPressureDiastolic"
+        },
+        {
+            "TestResult":80.0,
+            "TestResultDesc":"Pulse"
+        }
+    ],
+    "TestTime":"2016-11-09 20:00:00"
+	"Error": "sample string 3"
+}
+如果传参正常，结果为空，则返回以下JSON包
+{
+    "Success":true,
+    "Code":0,
+    "Result":[]
+}
+           
+如果传参错误，则返回以下JSON包
+{
+     "Success":false,
+     "Code":0,
+     "Result":null,
+     "Error":"UID不可为空。"
+}
+</pre>
+        </fieldset>
+
+
+    </div>
+</body>
+</html>
+

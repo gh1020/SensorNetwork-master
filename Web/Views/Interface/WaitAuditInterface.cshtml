@@ -1,0 +1,58 @@
+﻿@using SensorNetwork.Data.Models;
+
+@model SensorNetwork.Data.Models.Interfaces
+@{
+    ViewBag.Title = "ChooseInterface";
+}
+<head>
+    <script src="~/Scripts/jquery-3.1.0.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <script type="text/javascript">
+
+    $(function () {
+        $("#menu").on("click", ".one", function () {
+            $(this).closest("li").find(".two").prop("checked", this.checked);
+        })
+    })
+    </script>
+
+</head>
+
+
+<body>
+    <div class="WaitAuditInterfacecContent">
+        <h5>当前位置：等待审核接口</h5>
+        @if (ViewData["dic"] != null)
+        {
+            <form>
+                <div class="box">
+                    <ul id="menu" style="margin:15px auto;padding-left:15px;font-size:14px;">
+                        @foreach (var dic in ViewData["dic"] as Dictionary<string, List<Interfaces>>)
+                            {
+                                <li style="padding-top:10px;padding-bottom:10px;">
+                                    <label for="@dic.Key" style="font-weight:bold;">@dic.Key:</label>
+                                    <ul style="border:0.5px solid #98cef5;background-color:#e1ecf5;padding-bottom:10px;padding-left:15px;margin-top:5px;">
+                                        @foreach (var inter in dic.Value)
+                                        {
+                                            <li style="margin-top:10px;">
+                                                <input type="checkbox" name="interfaces" value="@inter.CategoryCode" id="@inter.CategoryCode" checked="checked" onclick="return false;"/>
+                                                <label for="@inter.CategoryCode">@inter.CategoryName</label>
+                                            </li>
+                                        }
+                                    </ul>
+                                </li>
+                            }
+                    </ul>
+                </div>
+            </form>
+            <div style="width:100%;margin-top:20px;color:#ff0000;font-size:12px;padding-top:10px;padding-bottom:10px;text-align:center;">提示：这些接口需要等待开放平台后台的审核，审核通过才能在可用接口里面查看！</div>
+        }
+        else
+        {
+            <div style="border:1px solid #b2adad;width:100%;margin-top:20px;padding-top:20px;padding-bottom:20px;color:#dcbc0b;font-size:16px;text-align:center;">提示：您目前没有等待审核的接口!</div>
+        }
+    </div>
+</body>

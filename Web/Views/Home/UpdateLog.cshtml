@@ -1,0 +1,94 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <style type="text/css">
+       #Content-right h2{
+            -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #e7e7e7;
+    border-image: none;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+    color: #3c3d3f;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1;
+    margin: 0 0 20px;
+    padding: 30px 0 20px;
+        }
+       #Content-right p{
+            color: #767676;
+    font-size: 14px;
+    line-height: 2;
+    margin: -5px 0;
+    overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div style="margin-left:10px;margin-right:10px;">
+        <h5>当前位置：开始前必读->更新日志        </h5>
+        <br/>
+        <h2><span class="mw-headline" id="">2016年10月16日 联桥网云•开放平台 v3.1.1发布</span></h2>
+        @*<fieldset>*@
+            <p style="line-height:30px">
+                【 修 复 】
+            </p><p style="line-height:30px">
+                1.  实现线程异步提交数据到应用云平台
+            </p><p style="line-height:30px">
+                2.  修复数据解析乱码
+            </p><p style="line-height:30px">
+                3.  修改协议结构、蓝牙设备连接、删除、向蓝牙设备发送指令
+            </p><p style="line-height:30px">
+                4.  修改extsens，处理外接蓝牙设备数据包，并上传到应用云平台接口
+            </p><p style="line-height:30px">
+                5.  去掉已连接设备数量，增加WEB API中读取UID数据接口
+            </p>
+        @*</fieldset>*@<br />
+
+        <h2><span class="mw-headline" id="">2016年9月6日 联桥网云•开放平台 v2.1.1发布</span></h2>
+        @*<fieldset>*@
+            <p style="line-height:30px">                
+                【 修 复 】
+            </p><p style="line-height:30px">
+                1.  添加项目Common、nuget zeromq部分，完善extsens
+            </p><p style="line-height:30px">
+                2.  实现http post蓝牙设备数据不成功时才调用ZMQ发送
+            </p><p style="line-height:30px">
+                3.  设备上传数据Frame_Num4个字节修改为2个字节
+            </p><p style="line-height:30px">
+                4.  GatewayController里增加了蓝牙部分的函数，包括蓝牙设备列表、连接蓝牙设备、删除蓝牙设备、向蓝牙设备发送指令、查询蓝牙主动上报的数据、注册信息、上下线通知信息
+            </p><p style="line-height:30px">
+                5.  web api实现蓝牙接口，传感器数据上传时间间隔
+            </p>
+        @*</fieldset>*@<br/>
+
+        <h2><span class="mw-headline" id="">2016年8月21日 联桥网云•开放平台 v1.1.1发布</span></h2>
+        @*<fieldset>*@            
+            <p style="line-height:30px">                
+                【 修 复 】
+            </p><p style="line-height:30px">
+                1. 修复智能网关协议、更新协议
+            </p><p style="line-height:30px">
+                2. 修复数据传输链路
+            </p><p style="line-height:30px">
+                3. 完善数据包输出Json结构
+            </p><p style="line-height:30px">
+                4. 完善网关绑定及查询
+            </p><p style="line-height:30px">
+                5. 实现数据POST到外部服务器
+            </p>
+        @*</fieldset>*@
+
+    </div>
+</body>
+</html>

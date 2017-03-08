@@ -1,0 +1,115 @@
+﻿@using SensorNetwork.Data.Models;
+@model SensorNetwork.Data.Models.Interfaces
+@{
+    ViewBag.Title = "ChooseInterface";
+}
+<body>
+    <h5>当前位置：申请接口</h5>
+    <div class="AddInterfaceContent" style="margin:20px auto;">
+        @if (ViewData["dic"] != null)
+        {
+            var dict = ViewData["dic"] as Dictionary<string, List<Interfaces>>;
+            if (dict.Count > 0)
+            {
+                    <form method="post" action="Interface/AddInterface" id="check_box" style="padding-top:20px;">
+                        <div class="box">
+                            <ul id="menu">
+                                @foreach (var dic in dict)
+                                {
+                                    <li style="padding-top:10px;padding-bottom:10px;">
+                                        <input type="checkbox" style="border:1px solid black" class="one" id="@dic.Key" />
+                                        <label for="@dic.Key" style="font-weight:bold;font-size:14px;">@dic.Key:</label>
+                                        <ul style="border:0.5px solid #98cef5;background-color:#e1ecf5;padding-bottom:10px;margin-top:5px;">
+                                            @foreach (var inter in dic.Value)
+                                            {
+                                                <li style="margin-top:10px;">
+                                                    <input type="checkbox" name="interfaces" value="@inter.CategoryCode" id="@inter.CategoryCode" class="two" />
+                                                    <label for="@inter.CategoryCode"  style="font-size:14px;cursor: pointer" class="interLbl" id="@inter.sn" onmouseover="showDetailMsg('@inter.Description','@inter.sn');" onmouseout="hideDetailMsg('@inter.sn');">@inter.CategoryName</label>
+                                                </li>
+                                            }
+                                        </ul>
+                                    </li>
+                                    }
+                            </ul>
+                        </div>
+                        <div class="sub" style="margin-top:30px;">
+                            <input type="submit" name="submit" value="申请" id="submit" style="cursor: pointer"/>
+                        </div>
+                    </form>
+            }
+            else
+            {
+                <div style="margin:auto;margin-top:30px;"><span>目前没有可以申请的接口！</span></div>
+            }
+        }
+    </div>
+</body>
+<script src="~/Scripts/jquery-3.1.0.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<script type="text/javascript">
+    function artAlert(res) {
+        art.dialog({
+            lock: true,
+            drag: false,
+            background: '#000',
+            opacity: 0.6,
+            content: res,
+            icon: 'warning',
+            ok: function () {
+            },
+            cancel: false
+        });
+    }
+
+        $(function () {
+            $("input").prop("checked", false);
+            $("#menu").on("click", ".one", function () {
+            $(this).closest("li").find(".two").prop("checked", this.checked);
+            })
+
+            $("#check_box").submit(function () {
+                $.ajax({
+                    url: "/Interface/AddInterface", // 提交的Action
+                    data: $("#check_box").serialize(),// 从表单中获取数据
+                    type: "POST",// 设置请求类型为"POST"，默认为"GET"
+                    beforeSend: function () {
+
+                    },// 表单提交前方法
+                    error: function (request) {
+                        //alert("表单提交出错，请稍候再试" + request);
+
+                        artAlert("表单提交出错，请稍候再试" + request);
+                       
+
+                    }, // 设置表单提交出错
+                    success: function (data) {
+                        // 设置表单提交完成使用方法
+                        if (data == "提交成功") {
+
+                            art.dialog({
+                                lock: true,
+                                drag: false,
+                                background: '#000',
+                                opacity: 0.6,
+                                content: "请等待后台审核",
+                                icon: 'success',
+                                ok: function () {
+                                    window.location.reload();
+                                },
+                                cancel: false
+                            });
+                           
+
+                        } else {
+                           
+                            artAlert(data);
+                       }
+                     }
+                    });
+                return false;
+            })
+        })
+</script>

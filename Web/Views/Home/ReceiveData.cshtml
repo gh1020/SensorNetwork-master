@@ -1,0 +1,104 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>正在建设中...</title>
+</head>
+<body>
+    <div style="margin-left:10px;margin-right:10px;">
+        <h5>当前位置：开始前必读->数据接收说明        </h5>
+        <br />
+        <fieldset>
+            <p style="line-height:30px">
+                若第三方应用商在申请接口时填写了正确的Http数据接收地址，则就能够收到自己的数据。在接收数据时，以下提供C#数据接收示例。<br />
+            </p>
+        </fieldset><br />
+        <fieldset>
+            <pre style="line-height:20px">
+（1）【定义Json对象准备接收数据包（BluetoothDeviceData.cs）】
+public class BluetoothDeviceData
+{
+    public string Type { get; set; }
+    public string GatewayID{ get; set; }
+    public string UID { get; set; }//设备UID
+    public List&lt;Re&gt; Result { get; set; }//测试结果
+    Result { get; set; }//测试结果
+    public string TestTime { get; set; }//测试时间
+    public class Re
+    {
+        public double TestResult { get; set; }//数据
+        public string TestResultDesc { get; set; }//数据描述
+    }
+}</pre>
+        </fieldset><br />
+
+        <fieldset>
+            <pre style="line-height:20px">
+（2）【开始接收Json数据包】        
+public HttpResponseMessage PostBluetoothPacket(BluetoothDeviceData packet)//packet为接收json的一个对象
+{
+    HttpResponseMessage result = null;
+    List<Sensor.Models.BluetoothDeviceData.Re> r = packet.Result;
+    PacketProcessorBase.WriteLog("r.Count();" + r.Count());//r.Count()为Result内部数据个数
+    foreach (BluetoothDeviceData.Re p in r)//遍历Result内部数组
+    {               
+        result = SaveBluetoothDeviceData(packet, p.TestResult, p.TestResultDesc);//保存数据到DB
+    }           
+    return result;
+}</pre>
+        </fieldset><br />
+
+        <fieldset>
+            <pre style="line-height:20px">
+（3）【保存数据到DB】        
+public HttpResponseMessage SaveBluetoothDeviceData(BluetoothDeviceData packet, double TestResult, string TestResultDesc)
+{
+    HttpResponseMessage result = null;
+    switch (TestResultDesc)
+    {
+        case "Rate"://功率因素
+            using (Model.EntitiesSQL db = new Model.EntitiesSQL())
+            {
+                Model.Rate obj = new Model.Rate();
+                string strDataValue = "";
+                try
+                {
+                    obj.UID = packet.UID;
+                    obj.TestResult = TestResult;                            
+                    obj.TestTime = packet.TestTime;
+                    obj.CreateTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+                    obj.UserID = "";
+                    db.Rate.Add(obj);
+                    db.SaveChanges();
+                    result = Common.JsonHelper.toJson
+                        ("{'status':true,'msg':'操作成功！','data':'" + strDataValue + "'}");
+                }
+                catch (Exception ex)
+                {
+                    result = Common.JsonHelper.toJson
+                        ("{'status':false,'msg':'操作失败:" + ex.Message + "','data':'" + strDataValue + "'}");
+                }
+                finally
+                {
+                    db.Database.Connection.Close();
+                    db.Dispose();
+                }
+            } 
+            break;
+    }
+    return result;
+}</pre>
+        </fieldset><br />
+
+
+
+
+    </div>
+</body>
+</html>

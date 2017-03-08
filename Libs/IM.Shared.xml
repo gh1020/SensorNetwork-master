@@ -1,0 +1,1843 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>IM.Shared</name>
+    </assembly>
+    <members>
+        <member name="M:IM.Aliyun.OSS.Upload(System.String,System.String)">
+            <summary>
+            上传本地文件
+            </summary>
+            <param name="localpath"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="M:IM.Aliyun.OSS.Upload(System.Net.Http.HttpContent)">
+            <summary>
+            通过http上传
+            </summary>
+            <param name="content"></param>
+        </member>
+        <member name="M:IM.Aliyun.OSS.Upload(System.IO.Stream,System.String)">
+            <summary>
+            上传文件流
+            </summary>
+            <param name="steam"></param>
+            <param name="filename"></param>
+        </member>
+        <member name="M:IM.Aliyun.OSS.UploadFromURL(System.String,System.String)">
+            <summary>
+            将一个url地址上传到aliyun
+            </summary>
+            <param name="url"></param>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="P:IM.ApiPagedList`1.PageIndex">
+            <summary>
+            页码，1开始
+            </summary>
+        </member>
+        <member name="P:IM.ApiPagedList`1.PageSize">
+            <summary>
+            页大小
+            </summary>
+        </member>
+        <member name="P:IM.ApiPagedList`1.TotalCount">
+            <summary>
+            数据总数
+            </summary>
+        </member>
+        <member name="P:IM.ApiPagedList`1.HasNextPage">
+            <summary>
+            是否有下一页
+            </summary>
+        </member>
+        <member name="P:IM.ApiPagedList`1.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="M:IM.ApiPagedList`1.#ctor(System.Int32,System.Int32,System.Int32,System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            构造
+            </summary>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">页大小</param>
+            <param name="totalCount">总数</param>
+            <param name="data">数据</param>
+        </member>
+        <member name="M:IM.ApiPagedList`1.New``1(System.Collections.Generic.IEnumerable{``0})">
+            <summary>
+            转换到别的类型
+            </summary>
+            <typeparam name="TNew"></typeparam>
+            <param name="select"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.ApiPagedList`1.Select``1(System.Linq.Expressions.Expression{System.Func{`0,``0}})">
+            <summary>
+            转换到别的类型
+            </summary>
+            <typeparam name="TNew"></typeparam>
+            <param name="select"></param>
+            <returns></returns>
+        </member>
+        <member name="P:IM.ApiResult`1.Success">
+            <summary>
+            是否获取成功
+            </summary>
+        </member>
+        <member name="P:IM.ApiResult`1.Code">
+            <summary>
+            代码
+            </summary>
+        </member>
+        <member name="P:IM.ApiResult`1.Result">
+            <summary>
+            结果
+            </summary>
+        </member>
+        <member name="P:IM.ApiResult`1.Error">
+            <summary>
+            错误信息，支持HTML
+            </summary>
+        </member>
+        <member name="T:IM.IPageQueryParam">
+            <summary>
+            分页参数
+            </summary>
+        </member>
+        <member name="P:IM.IPageQueryParam.s">
+            <summary>
+            每页个数
+            </summary>
+        </member>
+        <member name="P:IM.IPageQueryParam.p">
+            <summary>
+            页码
+            </summary>
+        </member>
+        <member name="P:IM.KeyValueItem`2.Key">
+            <summary>
+            key
+            </summary>
+        </member>
+        <member name="P:IM.KeyValueItem`2.Value">
+            <summary>
+            value
+            </summary>
+        </member>
+        <member name="T:IM.Shared.AppAssembly">
+            <summary>
+            程序集相关方法
+            </summary>
+        </member>
+        <member name="M:IM.Shared.AppAssembly.GetCurrentMethodName">
+            <summary>
+            获取当前的方法名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.AppAssembly.GetCurrentMethodNameEx">
+            <summary>
+            获取当前的方法名称
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.AppAssembly.GetStackTrace">
+            <summary>
+            获取运行堆栈
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.AppAssembly.GetPreviousMethodName">
+            <summary>
+            获取调用运行的方法名
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:IM.Shared.AppAssembly.AssemblyTitle">
+            <summary>
+            获取可执行文件的程序集的标题
+            </summary>
+        </member>
+        <member name="P:IM.Shared.AppAssembly.AssemblyDescription">
+            <summary>
+            获取可执行文件的程序集的标题
+            </summary>
+        </member>
+        <member name="P:IM.Shared.AppAssembly.AssemblyGuid">
+            <summary>
+            获取可执行文件的程序集的 GUID
+            </summary>
+        </member>
+        <member name="P:IM.Shared.AppAssembly.LibraryVersion">
+            <summary>
+            当前库文件版本
+            </summary>
+        </member>
+        <member name="M:IM.Shared.AppAssembly.Restart(System.Boolean,System.Boolean)">
+            <summary>
+            重新启动当前程序
+            </summary>
+            <param name="useArguments">是用原有参数</param>
+        </member>
+        <member name="P:IM.Shared.AppAssembly.IsRunAsAdministrator">
+            <summary>
+            是否以管理员生活运行
+            </summary>
+        </member>
+        <member name="T:IM.Shared.AppConfigBase`1">
+            <summary>
+            配置文件基础类
+            </summary>
+            <typeparam name="TClass"></typeparam>
+        </member>
+        <member name="F:IM.Shared.AppConfigBase`1._configFileName">
+            <summary>
+            配置文件名
+            </summary>
+        </member>
+        <member name="P:IM.Shared.AppConfigBase`1.ConfigFileName">
+            <summary>
+            设置或者获取配置文件名
+            </summary>
+        </member>
+        <member name="M:IM.Shared.AppConfigBase`1.LoadFile(System.String)">
+            <summary>
+            载入配置文件
+            </summary>
+        </member>
+        <member name="M:IM.Shared.AppConfigBase`1.LoadFile">
+            <summary>
+            载入配置文件
+            </summary>
+        </member>
+        <member name="M:IM.Shared.AppConfigBase`1.SaveConfig">
+            <summary>
+            保持配置文件
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:IM.Shared.AppConfigFileNameAttribute">
+            <summary>
+            配置文件的文件名属性
+            </summary>
+        </member>
+        <member name="P:IM.Shared.AppConfigFileNameAttribute.FileNameType">
+            <summary>
+            文件名类型
+            </summary>
+        </member>
+        <member name="P:IM.Shared.AppConfigFileNameAttribute.ParentPath">
+            <summary>
+            保存位置
+            </summary>
+        </member>
+        <member name="P:IM.Shared.AppConfigFileNameAttribute.CustomFileName">
+            <summary>
+            自定义文件名
+            </summary>
+        </member>
+        <member name="P:IM.Shared.AppConfigFileNameAttribute.FileExtensionName">
+            <summary>
+            扩展名
+            </summary>
+        </member>
+        <member name="T:IM.Shared.AppConfigFileNameType">
+            <summary>
+            配置文件名类型
+            </summary>
+        </member>
+        <member name="F:IM.Shared.AppConfigFileNameType.Default">
+            <summary>
+            默认
+            </summary>
+        </member>
+        <member name="F:IM.Shared.AppConfigFileNameType.EntryAssemblyName">
+            <summary>
+            默认应用程序域中的进程可执行文件名称
+            </summary>
+        </member>
+        <member name="F:IM.Shared.AppConfigFileNameType.ExecutingAssembly">
+            <summary>
+            包含当前执行的代码的程序集名称
+            </summary>
+        </member>
+        <member name="F:IM.Shared.AppConfigFileNameType.CallingAssembly">
+            <summary>
+            当前正在执行的方法的方法的 Assembly 对象名称
+            </summary>
+        </member>
+        <member name="F:IM.Shared.AppConfigFileNameType.ClassName">
+            <summary>
+            类名
+            </summary>
+        </member>
+        <member name="F:IM.Shared.AppConfigFileNameType.Custom">
+            <summary>
+            自定义名称
+            </summary>
+        </member>
+        <member name="P:IM.Shared.AppEnvironment.IsX64">
+            <summary>Returns true if this process is running as x64 on an x64 system.</summary>
+        </member>
+        <member name="P:IM.Shared.AppEnvironment.IsWow64">
+            <summary>Returns true if this process is running as x86 on an x64 system (i.e. it's running under Wow64).</summary>
+        </member>
+        <member name="M:IM.Shared.AppEnvironment.TotalPhysicalMemory">
+            <summary>
+            获取系统物理内存大小
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.Juhe.SMS.SMSService.IsOk(IM.Shared.Juhe.SMS.SMSResult)">
+            <summary>
+            判断结果是否正确
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IM.Shared.Arguments">
+            <summary>
+            运行参数处理
+            </summary>
+        </member>
+        <member name="P:IM.Shared.Arguments.Args">
+            <summary>
+            原始参数,参数的一般形式 /model:Test,重复的以第一个为准
+            </summary>
+        </member>
+        <member name="P:IM.Shared.Arguments.ArgList">
+            <summary>
+            参数表
+            </summary>
+        </member>
+        <member name="M:IM.Shared.Arguments.SpliteArgs(System.String[])">
+            <summary>
+            分离参数
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.Arguments.GetPropertyValue(System.String)">
+            <summary>
+            获取某属性的值，如 /property:Value
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.Arguments.HasProperty(System.String)">
+            <summary>
+            判断是否存在某属性
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="P:IM.Shared.Helper.ClientIP">
+            <summary>
+            获取客户的IP地址
+            </summary>
+        </member>
+        <member name="T:IM.Shared.HiPerfTimer">
+            <summary>
+            高性能计数器
+            </summary>
+        </member>
+        <member name="M:IM.Shared.HiPerfTimer.Start">
+            <summary>
+             开始计时器
+            </summary>
+        </member>
+        <member name="M:IM.Shared.HiPerfTimer.Stop">
+            <summary>
+            停止计时器
+            </summary>
+        </member>
+        <member name="P:IM.Shared.HiPerfTimer.Duration">
+            <summary>
+            返回计时器经过时间(单位：秒)
+            </summary>
+        </member>
+        <member name="T:IM.Shared.JsonSerializerBase`1">
+            <summary>
+            Json 序列化辅助基类
+            一般不需要继承该类来使用其静态方法，
+            如果两类存在继承关系，而需要互转，那么底层类必须继承该基类
+            </summary>
+            <typeparam name="TClass">类</typeparam>
+            <remarks>使用 [IgnoreDataMember] 来忽略不需要序列化的项目</remarks>
+        </member>
+        <member name="M:IM.Shared.JsonSerializerBase`1.ToJsonBytes">
+            <summary>
+            将该类转换为 Json 字节
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.JsonSerializerBase`1.ToJsonString">
+            <summary>
+            将该类转换为 Json 文本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.JsonSerializerBase`1.WriteJsonToFile(System.String)">
+            <summary>
+            保存当前对象到文件
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.JsonSerializerBase`1.FromJsonBytes(System.Byte[],System.Type)">
+            <summary>
+            从 Json 字符串中还原对象
+            </summary>
+            <param name="jsonString"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.JsonSerializerBase`1.FromJsonBytes(System.Byte[])">
+            <summary>
+            从 Json 字符串中还原对象
+            </summary>
+            <param name="jsonString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.JsonSerializerBase`1.ToJsonBytes(`0)">
+            <summary>
+            将对象转换为 Json 字符串
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.JsonSerializerBase`1.FromJsonString(System.String,System.Type)">
+            <summary>
+            从 Json 字符串中还原对象
+            </summary>
+            <param name="jsonString"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.JsonSerializerBase`1.FromJsonString(System.String)">
+            <summary>
+            从 Json 字符串中还原对象
+            </summary>
+            <param name="jsonString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.JsonSerializerBase`1.ToJsonString(`0)">
+            <summary>
+            将对象转换为 Json 字符串
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.JsonSerializerBase`1.ReadJsonFromFile(System.String,System.Type)">
+            <summary>
+            从 Json 文件中还原对象
+            </summary>
+            <param name="filePath"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.JsonSerializerBase`1.WriteJsonToFile(`0,System.String)">
+            <summary>
+            保存对象到文件
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.JsonSerializerBase`1.ReadJsonFromFile(System.String)">
+            <summary>
+            从 Json 文件中还原对象
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.JsonSerializerBase`1.SetDefault">
+            <summary>
+            设置默认值
+            </summary>
+        </member>
+        <member name="M:IM.Shared.JsonSerializerBase`1.GetKnownType">
+            <summary>
+            获取已知的类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.JsonSerializerBase`1.GetDataContractJsonSerializer(System.Type)">
+            <summary>
+            序列化转换器缓存，避免重复创建
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.JsonSerializerBase`1.GetJsonSerializer">
+            <summary>
+            获取当前类的序列话器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.DataContractJsonSerializerEx.ToJsonString``1(``0)">
+            <summary>
+            将对象转换为 Json 字符串
+            </summary>
+            <typeparam name="TClass"></typeparam>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.DataContractJsonSerializerEx.FromJsonString``1(``0,System.String)">
+            <summary>
+            将 Json 字符串转换为对象
+            </summary>
+            <typeparam name="TClass"></typeparam>
+            <param name="t"></param>
+            <param name="jsonString"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IM.Shared.RateGate">
+            <summary>
+            Used to control the rate of some occurrence per unit of time.
+            </summary>
+            <remarks>
+                <para>
+                To control the rate of an action using a <see cref="T:IM.Shared.RateGate"/>, 
+                code should simply call <see cref="M:IM.Shared.RateGate.WaitToProceed"/> prior to 
+                performing the action. <see cref="M:IM.Shared.RateGate.WaitToProceed"/> will block
+                the current thread until the action is allowed based on the rate 
+                limit.
+                </para>
+                <para>
+                This class is thread safe. A single <see cref="T:IM.Shared.RateGate"/> instance 
+                may be used to control the rate of an occurrence across multiple 
+                threads.
+                </para>
+            </remarks>
+        </member>
+        <member name="P:IM.Shared.RateGate.Occurrences">
+            <summary>
+            Number of occurrences allowed per unit of time.
+            </summary>
+        </member>
+        <member name="P:IM.Shared.RateGate.TimeUnitMilliseconds">
+            <summary>
+            The length of the time unit, in milliseconds.
+            </summary>
+        </member>
+        <member name="M:IM.Shared.RateGate.#ctor(System.Int32,System.TimeSpan)">
+            <summary>
+            Initializes a <see cref="T:IM.Shared.RateGate"/> with a rate of <paramref name="occurrences"/> 
+            per <paramref name="timeUnit"/>.
+            </summary>
+            <param name="occurrences">Number of occurrences allowed per unit of time.</param>
+            <param name="timeUnit">Length of the time unit.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            If <paramref name="occurrences"/> or <paramref name="timeUnit"/> is negative.
+            </exception>
+        </member>
+        <member name="M:IM.Shared.RateGate.WaitToProceed(System.Int32)">
+            <summary>
+            Blocks the current thread until allowed to proceed or until the
+            specified timeout elapses.
+            </summary>
+            <param name="millisecondsTimeout">Number of milliseconds to wait, or -1 to wait indefinitely.</param>
+            <returns>true if the thread is allowed to proceed, or false if timed out</returns>
+        </member>
+        <member name="M:IM.Shared.RateGate.WaitToProceed(System.TimeSpan)">
+            <summary>
+            Blocks the current thread until allowed to proceed or until the
+            specified timeout elapses.
+            </summary>
+            <param name="timeout"></param>
+            <returns>true if the thread is allowed to proceed, or false if timed out</returns>
+        </member>
+        <member name="M:IM.Shared.RateGate.WaitToProceed">
+            <summary>
+            Blocks the current thread indefinitely until allowed to proceed.
+            </summary>
+        </member>
+        <member name="M:IM.Shared.RateGate.Dispose">
+            <summary>
+            Releases unmanaged resources held by an instance of this class.
+            </summary>
+        </member>
+        <member name="M:IM.Shared.RateGate.Dispose(System.Boolean)">
+            <summary>
+            Releases unmanaged resources held by an instance of this class.
+            </summary>
+            <param name="isDisposing">Whether this object is being disposed.</param>
+        </member>
+        <member name="M:IM.Shared.TypeCache.GetKnownType(System.Type)">
+            <summary>
+            序列化转换器缓存，避免重复创建
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.WaitEvent.WaitHandleCollection`3.ClearTimeoutWaitItems">
+            <summary>
+            清理超时的对象
+            </summary>
+        </member>
+        <member name="T:IM.Shared.WaitEvent.WaitItem`2">
+            <summary>
+            等等对象
+            </summary>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerBase`1.ToXmlBytes">
+            <summary>
+            将该类转换为 Xml 字节
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerBase`1.ToXmlString">
+            <summary>
+            将该类转换为 Xml 文本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerBase`1.WriteXmlToFile(System.String)">
+            <summary>
+            保存当前对象到文件
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerBase`1.FromXmlBytes(System.Byte[],System.Type)">
+            <summary>
+            从 Xml 字符串中还原对象
+            </summary>
+            <param name="xmlString"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerBase`1.FromXmlBytes(System.Byte[])">
+            <summary>
+            从 Xml 字符串中还原对象
+            </summary>
+            <param name="xmlString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerBase`1.ToXmlBytes(`0)">
+            <summary>
+            将对象转换为 Xml 字符串
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerBase`1.FromXmlString(System.String,System.Type)">
+            <summary>
+            从 Xml 字符串中还原对象
+            </summary>
+            <param name="xmlString"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerBase`1.FromXmlString(System.String)">
+            <summary>
+            从 Xml 字符串中还原对象
+            </summary>
+            <param name="xmlString"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerBase`1.ToXmlString(`0)">
+            <summary>
+            将对象转换为 Xml 字符串
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerBase`1.ReadXmlFromFile(System.String,System.Type)">
+            <summary>
+            从 Xml 文件中还原对象
+            </summary>
+            <param name="filePath"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerBase`1.WriteXmlToFile(`0,System.String)">
+            <summary>
+            保存对象到文件
+            </summary>
+            <param name="filePath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerBase`1.ReadXmlFromFile(System.String)">
+            <summary>
+            从 Xml 文件中还原对象
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerBase`1.SetDefault">
+            <summary>
+            设置默认值
+            </summary>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerBase`1.GetKnownType">
+            <summary>
+            获取已知的类型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerBase`1.GetXmlSerializer(System.Type)">
+            <summary>
+            序列化转换器缓存，避免重复创建
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerBase`1.GetXmlSerializer">
+            <summary>
+            获取当前类的序列话器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerEx.ToXmlString``1(``0)">
+            <summary>
+            将对象转换为 Xml 字符串
+            </summary>
+            <typeparam name="TClass"></typeparam>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Shared.XmlSerializerEx.FromXmlString``1(``0,System.String)">
+            <summary>
+            将 Xml 字符串转换为对象
+            </summary>
+            <typeparam name="TClass"></typeparam>
+            <param name="t"></param>
+            <param name="xmlString"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IM.ClassComparators.Comparators.IgnoredCompareAttribute">
+            <summary>
+            忽略比较该字段
+            </summary>
+        </member>
+        <member name="T:IM.ClassComparators.IgnoredCompareAttribute">
+            <summary>
+            忽略比较该字段
+            </summary>
+        </member>
+        <member name="T:IM.ClassComparators.ClassComparator">
+            <summary>
+            类型比较器
+            </summary>
+        </member>
+        <member name="T:IM.Excel.Cell">
+             <summary>
+            单元格数据
+             </summary>
+        </member>
+        <member name="P:IM.Excel.Cell.Value">
+            <summary>
+            值
+            </summary>
+        </member>
+        <member name="P:IM.Excel.Cell.IsText">
+            <summary>
+            是否是文本
+            </summary>
+        </member>
+        <member name="T:IM.Excel.DeCamelizer">
+            <summary>
+            Helper class that can split a string in camelcase into its separate words.
+            </summary>
+        </member>
+        <member name="M:IM.Excel.DeCamelizer.Split(System.String)">
+            <summary>
+            Splits the string argument on capital letters and rejoins it with spaces.
+            </summary>
+        </member>
+        <member name="T:IM.Excel.ExcelCellAttribute">
+            <summary>
+            单元格属性
+            </summary>
+        </member>
+        <member name="P:IM.Excel.ExcelCellAttribute.Column">
+            <summary>
+            顺序
+            </summary>
+        </member>
+        <member name="P:IM.Excel.ExcelCellAttribute.Heading">
+            <summary>
+            列名
+            </summary>
+        </member>
+        <member name="P:IM.Excel.ExcelCellAttribute.Format">
+            <summary>
+            格式化
+            如 <c>string.Format("{0:Format}", PropertyValue)</c> 
+            </summary>
+        </member>
+        <member name="P:IM.Excel.ExcelCellAttribute.TreatAsText">
+            <summary>
+            作为文本
+            </summary>
+        </member>
+        <member name="T:IM.Excel.ExcelExporter`1">
+            <summary>
+            excel 导出
+            </summary>
+            <typeparam name="TData">The type that represents a row of data</typeparam>
+        </member>
+        <member name="M:IM.Excel.ExcelExporter`1.#ctor(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="isPoco">导出全部公开的属性</param>
+        </member>
+        <member name="M:IM.Excel.ExcelExporter`1.Export(System.Collections.Generic.IEnumerable{`0})">
+            <summary>
+            导出
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IM.Locker.INamedLocker">
+            <summary>
+            命名锁
+            </summary>
+        </member>
+        <member name="M:IM.Locker.INamedLocker.GetLock(System.String)">
+            <summary>
+            获取锁对象
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Locker.INamedLocker.RemoveLock(System.String)">
+            <summary>
+            移除锁
+            </summary>
+            <param name="name"></param>
+        </member>
+        <member name="M:IM.Locker.INamedLocker.RunWithLock(System.String,System.Action,System.Boolean)">
+            <summary>
+            锁定执行
+            </summary>
+            <param name="name"></param>
+            <param name="action"></param>
+            <param name="auto_remove">自动移除锁对象</param>
+        </member>
+        <member name="M:IM.Locker.INamedLocker.RunWithLock``1(System.String,System.Func{``0},System.Boolean)">
+            <summary>
+            锁定执行
+            </summary>
+            <typeparam name="TResult"></typeparam>
+            <param name="name"></param>
+            <param name="func"></param>
+            <param name="auto_remove">自动移除锁对象</param>
+            <returns></returns>
+        </member>
+        <member name="T:IM.Locker.NamedLockerAutoRemove">
+            <summary>
+            命名锁，自动清除过期的主键
+            </summary>
+        </member>
+        <member name="M:IM.Locker.NamedLockerAutoRemove.#ctor(System.Int32)">
+            <summary>
+            命名锁，自动清除
+            </summary>
+            <param name="milliseconds">N毫秒后自动清除key</param>
+        </member>
+        <member name="M:IM.Locker.NamedLockerAutoRemove.RunWithLock``1(System.String,System.Func{``0},System.Boolean)">
+            <summary>
+            执行带返回结果的锁定
+            </summary>
+            <typeparam name="TResult">返回结果</typeparam>
+            <param name="name">锁名</param>
+            <param name="func">执行方法</param>
+            <param name="auto_remove">自动移除锁对象</param>
+        </member>
+        <member name="M:IM.Locker.NamedLockerAutoRemove.RunWithLock(System.String,System.Action,System.Boolean)">
+            <summary>
+            执行带返回结果的锁定
+            </summary>
+            <typeparam name="TResult">返回结果</typeparam>
+            <param name="name">锁名</param>
+            <param name="func">执行方法</param>
+        </member>
+        <member name="T:IM.Locker.NamedLocker">
+            <summary>
+            命名锁
+            </summary>
+        </member>
+        <member name="M:IM.Locker.NamedLocker.GetLock(System.String)">
+            <summary>
+            获取锁对象
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Locker.NamedLocker.RunWithLock``1(System.String,System.Func{``0},System.Boolean)">
+            <summary>
+            执行带返回结果的锁定
+            </summary>
+            <typeparam name="TResult">返回结果</typeparam>
+            <param name="name">锁名</param>
+            <param name="func">执行方法</param>
+            <param name="auto_remove">自动移除锁对象</param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Locker.NamedLocker.RunWithLock(System.String,System.Action,System.Boolean)">
+            <summary>
+            执行带返回结果的锁定
+            </summary>
+            <param name="name">锁名</param>
+            <param name="func">执行方法</param>
+            <param name="auto_remove">自动移除锁对象</param>
+        </member>
+        <member name="T:IM.Pinyin.Exceptions.InvalidHanyuPinyinFormatException">
+            <summary>
+            An exception class indicates the wrong combination of pinyin output formats
+            </summary>
+        </member>
+        <member name="T:IM.Pinyin.Format.HanyuPinyinCaseType">
+            <summary>
+            The option indicates that hanyu pinyin is outputted as uppercase letters
+            </summary>
+        </member>
+        <member name="T:IM.Pinyin.Format.HanyuPinyinOutputFormat">
+            <summary>
+            This classes define how the Hanyu Pinyin should be outputted.
+            
+            The output feature includes:
+                Output format of character 'ü';
+                Output format of Chinese tones;
+                Cases of letters in outputted string.
+                
+            Default value of these features are list below:
+                HanyuPinyinVCharType: HanyuPinyinVCharType.WITH_V;
+                HanyuPinyinCaseType: HanyuPinyinCaseType.LOWERCASE;
+                HanyuPinyinToneType: HanyuPinyinToneType.WITH_TONE_NUMBER;
+            </summary>
+        </member>
+        <member name="T:IM.Pinyin.Format.HanyuPinyinToneType">
+            <summary>
+            Define the output format of Hanyu Pinyin tones.
+            
+            Chinese has four pitched tones and a "toneless" tone. They are called Píng(平,
+            flat), Shǎng(上, rise), Qù(去, high drop), Rù(入, drop) and Qing(轻, toneless).
+            Usually, we use 1, 2, 3, 4 and 5 to represent them.
+            
+            This class provides several options for output of Chinese tones, which are
+            listed below. For example, Chinese character '打'
+            
+            1、WITH_TONE_NUMBER  -> da3
+            2、WITHOUT_TONE      -> da
+            3、WITH_TONE_MARK    -> dǎ
+            </summary>
+        </member>
+        <member name="T:IM.Pinyin.Format.HanyuPinyinVCharType">
+            <summary>
+            Define the output format of character 'ü';
+            
+            'ü' is a special character of Hanyu pinyin, which can not be simply
+            represented by English letters. In Hanyu pinyin, such characters include 'ü',
+            'üe', 'üan', and 'ün'.
+            
+            This class provides several options for output of 'ü', which are listed
+            below:
+            
+            1. WITH_U_AND_COLON -> u:
+            2. WITH_V           -> v
+            3. WITH_U_UNICODE   -> ü
+            </summary>
+        </member>
+        <member name="T:IM.Pinyin.Format.PinyinFormatter">
+            <summary>
+            This class can convert Hanyu pinyin between different format.
+            </summary>
+        </member>
+        <member name="M:IM.Pinyin.Format.PinyinFormatter.FormatHanyuPinyin(System.String,IM.Pinyin.Format.HanyuPinyinOutputFormat)">
+            <summary>
+            Convert Hanyu pinyin to given format
+            </summary>
+            <param name="pinyin">The given Hanyu pinyin string </param>
+            <param name="outputFormat">The given format</param>
+            <returns>The Hanyu pinyin with given format</returns>
+        </member>
+        <member name="T:IM.Pinyin.PinyinHelper">
+            <summary>
+            Summary description for PinyinHelper.
+            </summary>
+        </member>
+        <member name="M:IM.Pinyin.PinyinHelper.#ctor">
+            <summary>
+            We don't need any instances of this object.
+            </summary>
+        </member>
+        <member name="M:IM.Pinyin.PinyinHelper.#cctor">
+            <summary>
+            Load unicode-pinyin map to memery while this class first use.
+            </summary>
+        </member>
+        <member name="M:IM.Pinyin.PinyinHelper.ToHanyuPinyinStringArray(System.Char)">
+             <summary>
+             Get all Hanyu pinyin of a single Chinese character (both
+             Simplified Chinese and Traditional Chinese).
+             
+             This function is same with: 
+                 ToHanyuPinyinStringArray(ch, new HanyuPinyinOutputFormat());
+            
+             For example, if the input is '偻', the return will be an array with 
+             two Hanyu pinyin strings: "lou2", "lv3". If the input is '李', the
+             return will be an array with one Hanyu pinyin string: "li3".
+             </summary>
+             <param name="ch">The given Chinese character</param>
+             <returns>A string array contains all Hanyu pinyin presentations; return 
+             null for non-Chinese character.</returns>
+        </member>
+        <member name="M:IM.Pinyin.PinyinHelper.ToFullLetter(System.String)">
+            <summary>
+            转换字符串
+            </summary>
+            <param name="str"></param>
+            <returns>无间隔的字符串全拼</returns>
+        </member>
+        <member name="M:IM.Pinyin.PinyinHelper.ToFirstLetter(System.String)">
+            <summary>
+            转换字符串
+            </summary>
+            <param name="str"></param>
+            <returns>字符串的首字母</returns>
+        </member>
+        <member name="M:IM.Pinyin.PinyinHelper.ToHanyuPinyinStringArray(System.Char,IM.Pinyin.Format.HanyuPinyinOutputFormat)">
+            <summary>
+            Get all Hanyu pinyin of a single Chinese character (both
+            Simplified Chinese and Traditional Chinese).
+            </summary>
+            <param name="ch">The given Chinese character</param>
+            <param name="format">The given output format</param>
+            <returns>A string array contains all Hanyu pinyin presentations; return 
+            null for non-Chinese character.</returns>
+        </member>
+        <member name="M:IM.Pinyin.PinyinHelper.GetFirstPinyinStringArray(System.Char,IM.Pinyin.Format.HanyuPinyinOutputFormat)">
+            <summary>
+            只从拼音库中读取第一个拼音
+            也就是忽略多音字
+            </summary>
+        </member>
+        <member name="T:IM.Pinyin.PinyinRomanizationType">
+            <summary>
+            Description of PinyinRomanizationType.
+            </summary>
+        </member>
+        <member name="M:IM.DescriptionHelper.GetDescription``1(``0)">
+            <summary>
+            获取枚举值的DescriptionAttribute所描述的友好名称
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.DescriptionHelper.GetDescription``1(System.Nullable{``0})">
+            <summary>
+            获取枚举值的DescriptionAttribute所描述的友好名称
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.DescriptionHelper.GetDescription(System.Type,System.String)">
+            <summary>
+            获取指定成员的DescriptionAttribute所描述的友好名称
+            </summary>
+            <param name="containerType">成员所在类的类型</param>
+            <param name="memberName">成员名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.DescriptionHelper.GetDescriptions``1(``0)">
+            <summary>
+            获取Flags枚举值的DescriptionAttribute所描述的友好名称
+            </summary>
+            <typeparam name="TEnumFlags"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.EnumHelper.ToUInt64(System.Object)">
+            <summary>
+            将任意一个枚举值，转换成Int64
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.EnumHelper.ToEnumU64(System.Type,System.Object)">
+            <summary>
+            将整数转换成基于UInt64的枚举类型
+            </summary>
+            <param name="enumType"></param>
+            <param name="integer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.EnumHelper.IsDefined``1(``0)">
+            <summary>
+            确认枚举值是否已经定义
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.EnumHelper.ToEnum``1(System.String,System.Boolean)">
+            <summary>
+            转换为枚举类型
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <param name="value"></param>
+            <param name="ignoreCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.EnumHelper.ToEnums``1(System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+            <summary>
+            转换为枚举类型（转换失败的也返回）
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <param name="value"></param>
+            <param name="ignoreCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.EnumHelper.ToEnums2``1(System.Collections.Generic.IEnumerable{System.String},System.Boolean)">
+            <summary>
+            转换为枚举类型（仅返回有效的）
+            </summary>
+            <typeparam name="TEnum"></typeparam>
+            <param name="value"></param>
+            <param name="ignoreCase"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.ImageHelper.SaveImageThumb(System.String,System.String,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            图片转换（裁剪并缩放）
+            </summary>
+            <param name="ASrcFileName">源文件名称</param>
+            <param name="ADestFileName">目标文件名称</param>
+            <param name="AWidth">转换后的宽度（像素）</param>
+            <param name="AHeight">转换后的高度（像素）</param>
+            <param name="AQuality">保存质量（取值在1-100之间）</param>
+            <returns>图片缩略图地址</returns>
+        </member>
+        <member name="M:IM.ObjectExtenstion.SetPropertyValue``2(``0,System.Func{System.Reflection.PropertyInfo,System.Boolean},``1)">
+            <summary>
+            将obj中的经predicate 筛选后的属性值 全部设置为 value
+            wuchang @ 2012.12.10
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="TValue"></typeparam>
+            <param name="obj"></param>
+            <param name="predicate"></param>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.StringExtenstion.IsEmptyString(System.String,System.Action{System.String,System.Boolean})">
+            <summary>
+            
+            </summary>
+            <param name="src"></param>
+            <param name="action">Action参数指明客串是否为空</param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.StringExtenstion.ToSBC(System.String)">
+            <summary>
+            将字符串中的半角字符转成全角字符。
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.StringExtenstion.ToDBC(System.String)">
+            <summary>
+            将字符串中的全角字符转成半角字符。
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.StringExtenstion.Code2CodeList(System.String,System.Int32)">
+            <summary>
+            编号分割为列表,如：111222333444,按3位分割为数组，得["111","111222","111222333","111222333444"]
+            </summary>
+            <param name="Code">编号</param>
+            <param name="BaseLen">基本编号长度</param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.StringExtenstion.IsIdCardNumber(System.String)">
+            <summary>
+            判断是不是身份证号码
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Security.Cryptography.Encrypt``1(System.Byte[],System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T">AesManaged RijndaelManaged DESCryptoServiceProvider RC2CryptoServiceProvider TripleDESCryptoServiceProvider</typeparam>
+            <param name="value"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="F:IM.Sockets.AsyncSocketConnection`2.currentStartSendByteCount">
+            <summary>
+            最后一个包发送的字节数
+            </summary>
+        </member>
+        <member name="M:IM.Sockets.IServerBase`3.CloseConnection(`0)">
+            <summary>
+            关闭连接
+            </summary>
+            <param name="conn"></param>
+        </member>
+        <member name="M:IM.Sockets.IUnpacker`1.AddToBuffer(System.Byte[])">
+            <summary>
+            添加数据到缓存
+            </summary>
+            <param name="bytes"></param>
+            <returns>已添加数据长度</returns>
+        </member>
+        <member name="M:IM.Sockets.IUnpacker`1.AddToBuffer(System.Net.Sockets.SocketAsyncEventArgs)">
+            <summary>
+            添加数据到缓存
+            </summary>
+            <param name="bytes"></param>
+            <returns>已添加数据长度</returns>
+        </member>
+        <member name="M:IM.Sockets.IUnpacker`1.MoveData">
+            <summary>
+            移动数据，
+            </summary>
+            <returns>是否还有后续数据</returns>
+        </member>
+        <member name="T:IM.Utils.ModelDocumentBuilder">
+            <summary>
+            模型文档生成器
+            </summary>
+        </member>
+        <member name="M:IM.Utils.ModelDocumentBuilder.Build(System.String[],System.String,System.Func{System.Type,System.Boolean})">
+            <summary>
+            构造模型文档 表名从 TableAttribute 属性提取
+            </summary>
+            <param name="namespaces">命名空间</param>
+            <param name="file">保存到文件</param>
+            <param name="clsFilter">class 过滤</param>
+        </member>
+        <member name="M:IM.Utils.ModelDocumentBuilder.Build(System.String[],System.String,System.Func{System.Type,System.Boolean},System.Func{System.Type,System.String})">
+            <summary>
+            构造模型文档
+            </summary>
+            <param name="namespaces">命名空间</param>
+            <param name="file">保存到文件</param>
+            <param name="clsFilter">class 过滤</param>
+            <param name="getTableName">获取表名</param>
+        </member>
+        <member name="M:IM.Utils.ModelDocumentBuilder.Build(System.String[],System.Func{System.Type,System.Boolean},System.Func{System.Type,System.String})">
+            <summary>
+            构造模型的描述信息
+            </summary>
+            <param name="namespaces">命名空间</param>
+            <param name="file">保存到文件</param>
+            <param name="clsFilter">class 过滤</param>
+            <param name="getTableName">获取表名</param>
+        </member>
+        <member name="T:IM.Utils.ClassModel">
+            <summary>
+            模型
+            </summary>
+        </member>
+        <member name="P:IM.Utils.ClassModel.isclass">
+            <summary>
+            类
+            </summary>
+        </member>
+        <member name="P:IM.Utils.ClassModel.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:IM.Utils.ClassModel.desc">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="P:IM.Utils.ClassModel.props">
+            <summary>
+            属性
+            </summary>
+        </member>
+        <member name="T:IM.Utils.PropertyModel">
+            <summary>
+            属性
+            </summary>
+        </member>
+        <member name="P:IM.Utils.PropertyModel.name">
+            <summary>
+            名称
+            </summary>
+        </member>
+        <member name="P:IM.Utils.PropertyModel.type">
+            <summary>
+            类型/值
+            </summary>
+        </member>
+        <member name="P:IM.Utils.PropertyModel.desc">
+            <summary>
+            说明
+            </summary>
+        </member>
+        <member name="M:IM.ThreadProcessor.Auto(System.Int32)">
+            <summary>
+            自动设置线程所在cpu
+            </summary>
+            <param name="count"></param>
+        </member>
+        <member name="M:IM.TimedTask.Stop">
+            <summary>
+            停止
+            </summary>
+        </member>
+        <member name="P:IM.Tree.ITreeModel`2.id">
+            <summary>
+            当前结点id
+            </summary>
+        </member>
+        <member name="P:IM.Tree.ITreeModel`2.pid">
+            <summary>
+            父节点id
+            </summary>
+        </member>
+        <member name="M:IM.Tree.TreeBusiness.Trees``3(System.Collections.Generic.List{``0},System.Func{``0,System.String})">
+            <summary>
+            构建树
+            </summary>
+            <typeparam name="TModel">模型</typeparam>
+            <typeparam name="TKey">id类型</typeparam>
+            <typeparam name="TPKey">pid类型，pid与id必须支持==运算</typeparam>
+            <param name="lst">原始列表</param>
+            <param name="getName">获取label的方法</param>
+            <returns></returns>
+        </member>
+        <member name="M:IM.Tree.TreeBusiness.buildChildren``3(System.Collections.Generic.List{``0},System.Collections.Generic.Dictionary{``1,IM.Tree.TreeNode{``0}},System.Object,System.Func{``0,System.String})">
+            <summary>
+            构建子节点
+            </summary>
+            <typeparam name="TModel">模型</typeparam>
+            <typeparam name="TKey">id类型</typeparam>
+            <typeparam name="TPKey">pid类型，pid与id必须支持==运算</typeparam>
+            <param name="ll">原始列表</param>
+            <param name="dic">结果</param>
+            <param name="pid">父id</param>
+            <param name="getName">获取label的方法</param>
+            <returns></returns>
+        </member>
+        <member name="T:IM.Tree.TreeBusiness.treelevel">
+            <summary>
+            001 002 003 004
+            </summary>
+        </member>
+        <member name="M:IM.UpYun.#ctor(System.String,System.String,System.String)">
+            初始化 UpYun 存储接口
+            @param $bucketname 空间名称
+            @param $username 操作员名称
+            @param $password 密码
+            return UpYun object
+        </member>
+        <member name="M:IM.UpYun.setApiDomain(System.String)">
+            切换 API 接口的域名
+            @param $domain {默认 v0.api.upyun.com 自动识别, v1.api.upyun.com 电信, v2.api.upyun.com 联通, v3.api.upyun.com 移动}
+            return null;
+        </member>
+        <member name="M:IM.UpYun.setAuthType(System.Boolean)">
+            是否启用 又拍签名认证
+            @param upAuth {默认 false 不启用(直接使用basic auth)，true 启用又拍签名认证}
+            return null;
+        </member>
+        <member name="M:IM.UpYun.getFolderUsage(System.String)">
+            获取总体空间的占用信息
+            return 空间占用量，失败返回 null
+        </member>
+        <member name="M:IM.UpYun.getBucketUsage">
+            获取某个子目录的占用信息
+            @param $path 目标路径
+            return 空间占用量，失败返回 null
+        </member>
+        <member name="M:IM.UpYun.mkDir(System.String,System.Boolean)">
+            创建目录
+            @param $path 目录路径
+            return true or false
+        </member>
+        <member name="M:IM.UpYun.rmDir(System.String)">
+            删除目录
+            @param $path 目录路径
+            return true or false
+        </member>
+        <member name="M:IM.UpYun.readDir(System.String)">
+            读取目录列表
+            @param $path 目录路径
+            return array 数组 或 null
+        </member>
+        <member name="M:IM.UpYun.writeFile(System.String,System.Byte[],System.Boolean)">
+            上传文件
+            @param $file 文件路径（包含文件名）
+            @param $datas 文件内容 或 文件IO数据流
+            return true or false
+        </member>
+        <member name="M:IM.UpYun.deleteFile(System.String)">
+            删除文件
+            @param $file 文件路径（包含文件名）
+            return true or false
+        </member>
+        <member name="M:IM.UpYun.readFile(System.String)">
+            读取文件
+            @param $file 文件路径（包含文件名）
+            @param $output_file 可传递文件IO数据流（默认为 null，结果返回文件内容，如设置文件数据流，将返回 true or false）
+            return 文件内容 或 null
+        </member>
+        <member name="M:IM.UpYun.setContentMD5(System.String)">
+            设置待上传文件的 Content-MD5 值（如又拍云服务端收到的文件MD5值与用户设置的不一致，将回报 406 Not Acceptable 错误）
+            @param $str （文件 MD5 校验码）
+            return null;
+        </member>
+        <member name="M:IM.UpYun.setFileSecret(System.String)">
+            设置待上传文件的 访问密钥（注意：仅支持图片空！，设置密钥后，无法根据原文件URL直接访问，需带 URL 后面加上 （缩略图间隔标志符+密钥） 进行访问）
+            如缩略图间隔标志符为 ! ，密钥为 bac，上传文件路径为 /folder/test.jpg ，那么该图片的对外访问地址为： http://空间域名/folder/test.jpg!bac
+            @param $str （文件 MD5 校验码）
+            return null;
+        </member>
+        <member name="M:IM.UpYun.getFileInfo(System.String)">
+            获取文件信息
+            @param $file 文件路径（包含文件名）
+            return array('type'=> file | folder, 'size'=> file size, 'date'=> unix time) 或 null
+        </member>
+        <member name="M:IM.UpYunHelper.Upload(System.IO.Stream,System.String,System.String)">
+            <summary>
+            上传
+            </summary>
+            <param name="steam"></param>
+            <param name="path"></param>
+            <param name="filename"></param>
+            <returns></returns>
+        </member>
+        <member name="T:IM.ZipHelper">
+            <summary>
+            Zip压缩与解压缩 
+            </summary>
+        </member>
+        <member name="M:IM.ZipHelper.ZipFile(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            压缩单个文件
+            </summary>
+            <param name="fileToZip">要压缩的文件</param>
+            <param name="zipedFile">压缩后的文件</param>
+            <param name="compressionLevel">压缩等级</param>
+            <param name="blockSize">每次写入大小</param>
+        </member>
+        <member name="M:IM.ZipHelper.ZipFile(System.String,System.String)">
+            <summary>
+            压缩单个文件
+            </summary>
+            <param name="fileToZip">要进行压缩的文件名</param>
+            <param name="zipedFile">压缩后生成的压缩文件名</param>
+        </member>
+        <member name="M:IM.ZipHelper.ZipFileDirectory(System.String,System.String)">
+            <summary>
+            压缩多层目录
+            </summary>
+            <param name="strDirectory">The directory.</param>
+            <param name="zipedFile">The ziped file.</param>
+        </member>
+        <member name="M:IM.ZipHelper.ZipSetp(System.String,ICSharpCode.SharpZipLib.Zip.ZipOutputStream,System.String)">
+            <summary>
+            递归遍历目录
+            </summary>
+            <param name="strDirectory">The directory.</param>
+            <param name="s">The ZipOutputStream Object.</param>
+            <param name="parentPath">The parent path.</param>
+        </member>
+        <member name="M:IM.ZipHelper.UnZip(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            解压缩一个 zip 文件。
+            </summary>
+            <param name="zipedFile">The ziped file.</param>
+            <param name="strDirectory">The STR directory.</param>
+            <param name="password">zip 文件的密码。</param>
+            <param name="overWrite">是否覆盖已存在的文件。</param>
+        </member>
+        <member name="M:System.Linq.LeftJoinExtension.LeftJoin``4(System.Linq.IQueryable{``0},System.Linq.IQueryable{``1},System.Linq.Expressions.Expression{System.Func{``0,``2}},System.Linq.Expressions.Expression{System.Func{``1,``2}},System.Linq.Expressions.Expression{System.Func{``0,``1,``3}})">
+            <summary>
+            LeftJoin，利用 GroupJoin
+            var customers = db.Customer
+            .GroupJoin(db.SpeicalCustomer, c => c.ID, g => g.CustomrId, (f, b) => new { f, b })
+            .SelectMany(z => z.b.DefaultIfEmpty(), (z, g) => new { z, g });
+            </summary>
+            <typeparam name="TOuter"></typeparam>
+            <typeparam name="TInner"></typeparam>
+            <typeparam name="TKey"></typeparam>
+            <typeparam name="TResult"></typeparam>
+            <param name="outer"></param>
+            <param name="inner"></param>
+            <param name="outerKeySelector"></param>
+            <param name="innerKeySelector"></param>
+            <param name="resultSelector"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.Linq.LinqSelectMergeExtension">
+            <summary>
+            Class for Merge extension methods.
+            </summary>
+        </member>
+        <member name="M:System.Linq.LinqSelectMergeExtension.Merge``3(System.Linq.Expressions.Expression{System.Func{``0,``1}},System.Linq.Expressions.Expression{System.Func{``0,``2}})">
+            <summary>
+            Merges the member initialization list of two lambda expressions into one.
+            </summary>
+            <typeparam name="TSource">Source type.</typeparam>
+            <typeparam name="TBaseDest">Resulting type of the base mapping expression. TBaseDest is
+            typically a super class of TExtendedDest</typeparam>
+            <typeparam name="TExtendedDest">Resulting type of the extended mapping expression.</typeparam>
+            <param name="baseExpression">The base mapping expression, containing a member 
+            initialization expression.</param>
+            <param name="mergeExpression">The extended mapping expression to be merged into the
+            base member initialization expression.</param>
+            <returns>Resulting expression, after the merged select expression has been applied.</returns>
+        </member>
+        <member name="T:System.Linq.LinqSelectMergeExtension.MergingVisitor`3">
+            <summary>
+            The merging visitor doing the actual merging work.
+            </summary>
+            <typeparam name="TSource">Source data type.</typeparam>
+            <typeparam name="TBaseDest">Resulting type of the base query.</typeparam>
+            <typeparam name="TExtendedDest">Resulting type of the merged expression.</typeparam>
+        </member>
+        <member name="T:System.Linq.LinqSelectMergeExtension.MergingVisitor`3.LambdaRebindingVisitor">
+            <summary>
+            Internal helper, that rebinds the lambda of the base init expression. The
+            reason for this is that the member initialization list of the base expression
+            is bound to the range variable in the base expression. To be able to merge those
+            into the extended expression, all those references have to be rebound to the
+            range variable of the extended expression. That rebinding is done by this helper.
+            </summary>
+        </member>
+        <member name="M:System.Linq.LinqSelectMergeExtension.MergingVisitor`3.LambdaRebindingVisitor.#ctor(System.Linq.Expressions.ParameterExpression,System.Linq.Expressions.ParameterExpression)">
+            <summary>
+            Ctor.
+            </summary>
+            <param name="newParameter">The range vaiable of the extended expression.</param>
+            <param name="oldParameter">The range variable of the base expression.</param>
+        </member>
+        <member name="M:System.Linq.LinqSelectMergeExtension.MergingVisitor`3.LambdaRebindingVisitor.VisitMember(System.Linq.Expressions.MemberExpression)">
+            <summary>
+            Whenever a memberaccess is done that access the old parameter, rewrite
+            it to access the new parameter instead.
+            </summary>
+            <param name="node">Member expression to visit.</param>
+            <returns>Possibly rewritten member access node.</returns>
+        </member>
+        <member name="M:System.Linq.LinqSelectMergeExtension.MergingVisitor`3.#ctor(System.Linq.Expressions.Expression{System.Func{`0,`1}})">
+            <summary>
+            Ctor
+            </summary>
+            <param name="baseExpression">The base expression to merge
+            into the member init list of the extended expression.</param>
+        </member>
+        <member name="M:System.Linq.LinqSelectMergeExtension.MergingVisitor`3.VisitLambda``1(System.Linq.Expressions.Expression{``0})">
+            <summary>
+            Pick up the extended expressions range variable.
+            </summary>
+            <typeparam name="T">Not used</typeparam>
+            <param name="node">Lambda expression node</param>
+            <returns>Unmodified expression tree</returns>
+        </member>
+        <member name="M:System.Linq.LinqSelectMergeExtension.MergingVisitor`3.VisitMemberInit(System.Linq.Expressions.MemberInitExpression)">
+            <summary>
+            Visit the member init expression of the extended expression. Merge the base 
+            expression into it.
+            </summary>
+            <param name="node">Member init expression node.</param>
+            <returns>Merged member init expression.</returns>
+        </member>
+        <member name="M:System.EnumerableExtension.Random``1(System.Collections.Generic.IEnumerable{``0},System.Random)">
+            <summary>
+            对序列的元素进行随机排序
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="arr"></param>
+            <param name="rnd"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.JsonExtensions">
+            <summary>
+            json 转换
+            </summary>
+        </member>
+        <member name="M:System.IEnumerableExtensions.AsList``1(``0)">
+            <summary>
+            作为列表
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="M:System.IEnumerableExtensions.AsArray``1(``0)">
+            <summary>
+            作为数组
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="item"></param>
+            <returns></returns>
+        </member>
+        <member name="T:System.DocsByReflection">
+            <summary>
+            Utility class to provide documentation for various types where available with the assembly
+            </summary>
+        </member>
+        <member name="M:System.DocsByReflection.XMLFromMember(System.Reflection.MethodInfo)">
+            <summary>
+            Provides the documentation comments for a specific method
+            </summary>
+            <param name="methodInfo">The MethodInfo (reflection data ) of the member to find documentation for</param>
+            <returns>The XML fragment describing the method</returns>
+        </member>
+        <member name="M:System.DocsByReflection.XMLFromMember(System.Reflection.MemberInfo)">
+            <summary>
+            Provides the documentation comments for a specific member
+            </summary>
+            <param name="memberInfo">The MemberInfo (reflection data) or the member to find documentation for</param>
+            <returns>The XML fragment describing the member</returns>
+        </member>
+        <member name="M:System.DocsByReflection.XMLFromType(System.Type)">
+            <summary>
+            Provides the documentation comments for a specific type
+            </summary>
+            <param name="type">Type to find the documentation for</param>
+            <returns>The XML fragment that describes the type</returns>
+        </member>
+        <member name="M:System.DocsByReflection.XMLFromName(System.Type,System.Char,System.String)">
+            <summary>
+            Obtains the XML Element that describes a reflection element by searching the 
+            members for a member that has a name that describes the element.
+            </summary>
+            <param name="type">The type or parent type, used to fetch the assembly</param>
+            <param name="prefix">The prefix as seen in the name attribute in the documentation XML</param>
+            <param name="name">Where relevant, the full name qualifier for the element</param>
+            <returns>The member that has a name that describes the specified reflection element</returns>
+        </member>
+        <member name="F:System.DocsByReflection.cache">
+            <summary>
+            A cache used to remember Xml documentation for assemblies
+            </summary>
+        </member>
+        <member name="F:System.DocsByReflection.failCache">
+            <summary>
+            A cache used to store failure exceptions for assembly lookups
+            </summary>
+        </member>
+        <member name="M:System.DocsByReflection.XMLFromAssembly(System.Reflection.Assembly)">
+            <summary>
+            Obtains the documentation file for the specified assembly
+            </summary>
+            <param name="assembly">The assembly to find the XML document for</param>
+            <returns>The XML document</returns>
+            <remarks>This version uses a cache to preserve the assemblies, so that 
+            the XML file is not loaded and parsed on every single lookup</remarks>
+        </member>
+        <member name="M:System.DocsByReflection.XMLFromAssemblyNonCached(System.Reflection.Assembly)">
+            <summary>
+            Loads and parses the documentation file for the specified assembly
+            </summary>
+            <param name="assembly">The assembly to find the XML document for</param>
+            <returns>The XML document</returns>
+        </member>
+        <member name="T:System.DocsByReflection.DocsByReflectionException">
+            <summary>
+            An exception thrown by the DocsByReflection library
+            </summary>
+        </member>
+        <member name="M:System.DocsByReflection.DocsByReflectionException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new exception instance with the specified
+            error message and a reference to the inner exception that is the cause of
+            this exception.
+            </summary>
+            <param name="message">The error message that explains the reason for the exception.</param>
+            <param name="innerException">The exception that is the cause of the current exception, or null if none.</param>
+        </member>
+        <member name="T:System.ClassValueCopier">
+            <summary>
+            类属性/字段的值复制工具
+            </summary>
+        </member>
+        <member name="M:System.ClassValueCopier.Copy(System.Object,System.Object)">
+            <summary>
+            复制
+            </summary>
+            <param name="destination">目标</param>
+            <param name="source">来源</param>
+            <returns>成功复制的值个数</returns>
+        </member>
+        <member name="M:System.ClassValueCopier.Copy(System.Object,System.Object,System.Type)">
+            <summary>
+            复制
+            </summary>
+            <param name="destination">目标</param>
+            <param name="source">来源</param>
+            <param name="type">复制的属性字段模板</param>
+            <returns>成功复制的值个数</returns>
+        </member>
+        <member name="M:System.ClassValueCopier.Copy(System.Object,System.Object,System.Type,System.String[])">
+            <summary>
+            复制
+            </summary>
+            <param name="destination">目标</param>
+            <param name="source">来源</param>
+            <param name="type">复制的属性字段模板</param>
+            <param name="excludeName">排除下列名称的属性不要复制</param>
+            <returns>成功复制的值个数</returns>
+        </member>
+        <member name="T:System.ClassValueCopier2">
+            <summary>
+            类属性/字段的值复制工具 扩展方法
+            </summary>
+        </member>
+        <member name="M:System.ClassValueCopier2.GetPropertyNames(System.Object)">
+            <summary>
+            获取实体类的属性名称
+            </summary>
+            <param name="source">实体类</param>
+            <returns>属性名称列表</returns>
+        </member>
+        <member name="M:System.ClassValueCopier2.GetPropertyNames(System.Type)">
+            <summary>
+            获取类类型的属性名称（按声明顺序）
+            </summary>
+            <param name="source">类类型</param>
+            <returns>属性名称列表</returns>
+        </member>
+        <member name="M:System.ClassValueCopier2.GetPropertyNames(System.Type,System.Boolean)">
+            <summary>
+            获取类类型的属性名称
+            </summary>
+            <param name="source">类类型</param>
+            <param name="declarationOrder">是否按声明顺序排序</param>
+            <returns>属性名称列表</returns>
+        </member>
+        <member name="M:System.ClassValueCopier2.CopyValueFrom(System.Object,System.Object)">
+            <summary>
+            从源对象赋值到当前对象
+            </summary>
+            <param name="destination">当前对象</param>
+            <param name="source">源对象</param>
+            <returns>成功复制的值个数</returns>
+        </member>
+        <member name="M:System.ClassValueCopier2.CopyValueFrom(System.Object,System.Object,System.String[])">
+            <summary>
+            从源对象赋值到当前对象
+            </summary>
+            <param name="destination">当前对象</param>
+            <param name="source">源对象</param>
+            <param name="excludeName">排除下列名称的属性不要复制</param>
+            <returns>成功复制的值个数</returns>
+        </member>
+        <member name="M:System.ClassValueCopier2.CopyValueTo(System.Object,System.Object)">
+            <summary>
+            从当前对象赋值到目标对象
+            </summary>
+            <param name="source">当前对象</param>
+            <param name="destination">目标对象</param>   
+            <returns>成功复制的值个数</returns>
+        </member>
+        <member name="M:System.ClassValueCopier2.CopyValueTo(System.Object,System.Object,System.String[])">
+            <summary>
+            从当前对象赋值到目标对象
+            </summary>
+            <param name="source">当前对象</param>
+            <param name="destination">目标对象</param>   
+            <param name="excludeName">排除下列名称的属性不要复制</param>
+            <returns>成功复制的值个数</returns>
+        </member>
+        <member name="M:System.DateTimeExtension.Trim(System.DateTime,System.TrimDateTimePart)">
+            <summary>
+            截断日期部分
+            </summary>
+            <param name="self">日期</param>
+            <param name="part">需要截去</param>
+            <returns></returns>
+        </member>
+        <member name="T:System.TrimDateTimePart">
+            <summary>
+            截去的日期部分
+            </summary>
+        </member>
+        <member name="F:System.TrimDateTimePart.Quarter">
+            <summary>
+            本季度1号
+            </summary>
+        </member>
+        <member name="F:System.TrimDateTimePart.Month">
+            <summary>
+            截去月及后面
+            </summary>
+        </member>
+        <member name="F:System.TrimDateTimePart.DayOfWeek">
+            <summary>
+            返回本周周一
+            </summary>
+        </member>
+        <member name="F:System.TrimDateTimePart.Day">
+            <summary>
+            截去日及后面
+            </summary>
+        </member>
+        <member name="F:System.TrimDateTimePart.Hour">
+            <summary>
+            截去小时及后面
+            </summary>
+        </member>
+        <member name="F:System.TrimDateTimePart.Minute">
+            <summary>
+            截去分钟及后面
+            </summary>
+        </member>
+        <member name="F:System.TrimDateTimePart.Second">
+            <summary>
+            截去秒及后面
+            </summary>
+        </member>
+        <member name="F:System.TrimDateTimePart.Millisecond">
+            <summary>
+            截去毫秒及后面
+            </summary>
+        </member>
+        <member name="F:System.TrimDateTimePart.Tick">
+            <summary>
+            截去Tick
+            </summary>
+        </member>
+        <member name="T:System.Threading.QueueWork">
+            <summary>
+            自适应使用 HostingEnvironment.QueueBackgroundWorkItem  或 ThreadPool.QueueUserWorkItem
+            </summary>
+        </member>
+        <member name="T:Newtonsoft.Json.EnumDescriptionConverter">
+            <summary>
+            使用枚举的 Description 输出
+            </summary>
+        </member>
+        <member name="T:Newtonsoft.Json.TimeSpanConverter">
+            <summary>
+            TimeSpan 保留时和分
+            </summary>
+        </member>
+        <member name="P:Newtonsoft.Json.TimeSpanConverter.IsSeconds">
+            <summary>
+            UnixTicks 单位是秒，否则是毫秒
+            </summary>
+        </member>
+        <member name="T:Newtonsoft.Json.UnixTicksConverter">
+            <summary>
+            将DataTime 和 UnixTicks 相互转换
+            </summary>
+        </member>
+        <member name="P:Newtonsoft.Json.UnixTicksConverter.IsSeconds">
+            <summary>
+            UnixTicks 单位是秒，否则是毫秒
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,135 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>正在建设中...</title>
+    <style type="text/css">
+       
+        .color {
+            color: #3399CC;
+            text-decoration: none;
+            font-weight: bold;
+        }
+            /*链接设置*/
+            .color:visited {
+                color: #3399CC;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            /*访问过的链接设置*/
+            .color:hover {
+                color: #CF0000;
+                text-decoration: underline;
+                font-weight: bold;
+            }
+        /*鼠标放上的链接设置*/
+    </style>
+</head>
+<body>
+    <div style="margin-left:10px;margin-right:10px;">
+        <h5>当前位置：开始前必读->开发说明        </h5>
+        <br />
+        <fieldset>
+            <p style="line-height:30px;">
+                第三方应用若需接入联桥网云信息平台，可进入联桥网云•开放平台进行对接。了解接入方法后可在开放平台中进行注册、登录、接口申请等操作。<br />
+            </p>
+        </fieldset><br />
+        <fieldset>
+            <p style="line-height:30px">
+                （1）在注册页面填写您必要的信息，选择您需要何种行业（农业、工业、服务业）的接口。特别注意填写的Http接口，该接口地址是联桥网云信息平台主动发送数据到您平台的唯一通道，请务必填写正确。<br />
+            </p>
+        </fieldset><br />
+            <fieldset>
+                <p style="line-height:30px">
+                    （2）联桥网云信息平台以Json格式将数据发送到对应的应用云平台。若设备已在信息平台中注册并有解析该设备数据的协议，则发送数据的格式如下所示。对不同的设备，其中Result中的数据个数是灵活可变的。
+                对Result内部数据均包含“TestResult”和“TestResultDesc”两个描述，其中“TestResult”表示数据值，“TestResultDesc”表示数据描述。对“TestResultDesc”的说明，请参考<a href="javascript:;" onclick="showAtRight('/Home/TestResultDesc')" class="color">数据描述</a>。<br />
+                    {<br />
+                    "Success":true,<br />
+                    "Code":1,<br />
+                    "Type":"01",    --01代表设备数据已解析<br />
+                    "GatewayID":"354627828",    --网关ID<br />
+                    "UID":"BBTJ00017000310000000222",   --设备ID<br />
+                    "Result":[<br />
+                    {   <br />
+                    "TestResult":219.0,             --数据<br />
+                    "TestResultDesc":"Voltage"     --描述<br />
+                    },<br />
+                    {<br />
+                    "TestResult":19.0,             --数据<br />
+                    "TestResultDesc":"Temperature"     --描述<br />
+                    },<br />
+                    {<br />
+                    "TestResult":29.0,             --数据<br />
+                    "TestResultDesc":"Ampere"     --描述<br />
+                    },<br />
+                    {<br />
+                    "TestResult":0.25,             --数据<br />
+                    "TestResultDesc":"Rate"      --描述<br />
+                    },<br />
+                    {<br />
+                    "TestResult":7.25,             --数据<br />
+                    "TestResultDesc":"BloodSugar"      --描述<br />
+                    },<br />
+                    {<br />
+                    "TestResult":47.25,             --数据<br />
+                    "TestResultDesc":"BloodOxygen"      --描述<br />
+                    }<br />
+                    ],<br />
+                    "TestTime":"2016-11-09 20:00:00"<br />
+                    }
+                </p><br />
+
+        </fieldset><br />
+        <fieldset>
+            <p style="line-height:30px">
+                （3）若设备未在信息平台中注册，即信息平台没有解析该设备数据的协议，则直接发送设备的原始数据包，其发送数据的格式如下所示。<br />
+                {<br />
+                "Success":true,<br />
+                "Type":"02",    --02代表设备数据未解析，即上传原始数据包<br />
+                "GatewayID":"354627828",    --网关ID<br />
+                "UID":"BBTJ00017000310000000222",   --设备ID<br />
+                "Result":"FF4E00040F0611172E006200012ADB",   --设备原始数据包<br />
+                "TestTime":"2016-11-09 20:00:00"<br />
+                }
+            </p>
+        </fieldset><br />
+        <fieldset>
+            <p style="line-height:30px">
+                （4）若存在错误信息，其发送数据内容及格式如下所示。<br />
+                {<br />
+                "Success":false,<br />
+                "Result":"错误", <br />
+                "TestTime":"2016-11-09 20:00:00"<br />
+                }
+            </p>
+        </fieldset><br />
+        
+        <fieldset>
+            <p style="line-height:30px">
+                （5）您作为第三方应用，收到数据后，按照以上Json格式说明解析数据即可。<br/>
+
+            </p>
+
+        </fieldset><br />
+        <fieldset>
+            <p style="line-height:30px">
+                （6）若您还需要其它接口如网关列表信息与控制、设备控制、设备数据查询等，登录开放平台后即可申请此类接口。您申请的接口需要开放平台后台工作人员审核，审核通过后才可使用，敬请谅解。<br />
+
+            </p>
+
+        </fieldset><br />
+<fieldset>
+    <p style="line-height:30px">
+        （7）对接口的使用，请根据接口名称、地址、参数、返回格式，参考各接口文档的详细说明。<br />
+
+    </p>
+
+</fieldset>
+    </div>
+</body>
+</html>

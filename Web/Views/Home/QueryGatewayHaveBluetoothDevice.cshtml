@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "查询网关下蓝牙设备";
+}
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div style="margin-left:10px;margin-right:10px;">
+        <h5>当前位置：可用接口->网关查询->查询网关下设备        </h5><br/>
+        <p>            1.功能描述：        </p><fieldset>
+<pre>通过本接口可以查询某台网关下的蓝牙设备。</pre>
+        </fieldset><br />
+        <p>            2.接口地址：        </p>
+        <fieldset>
+            <pre>http://www.gosafenet.net/api/gateway/Bluetooth/DeviceConnectedList?id={id}</pre>
+        </fieldset><br />
+        <p>                    3.说明：                </p>
+        <fieldset>
+            <p>(1).调用方法GET</p>
+            <p>(2).参数id为网关id，为必填项</p>
+        </fieldset><br />
+
+
+
+        <p>                    4.返回说明：                </p>
+        <fieldset>
+            <pre>参数说明：</pre>
+            <p>
+                (1).UID:蓝牙设备UID<br />
+                (2).Name:蓝牙设备名称
+            </p>
+
+            <p>返回结果以JSON格式输出，其中，"Success"表示操作成功，"Code"表示返回代码，"Result"表示结果，"Error"表示错误信息，支持HTML。</p>
+            <p>例如：</p>
+            <pre>{
+  "Success": true,
+  "Code": 2,
+  "Result": {
+    "Items": [
+      {
+        "UID": "sample string 1",
+        "Name": "sample string 2"
+      },
+      {
+        "UID": "sample string 1",
+        "Name": "sample string 2"
+      }
+    ]
+  },
+  "Error": "sample string 3"
+}
+如果传参正常，结果为空，则返回以下JSON包
+{
+    "Success":true,
+    "Code":0,
+    "Result":[]
+}
+           
+如果传参错误，则返回以下JSON包
+{
+     "Success":false,
+     "Code":0,
+     "Result":null,
+     "Error":"UID不可为空。"
+}
+</pre>
+        </fieldset>
+
+
+    </div>
+</body>
+</html>
+

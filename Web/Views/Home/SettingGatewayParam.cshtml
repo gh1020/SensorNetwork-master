@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "设置网关参数";
+}
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div style="margin-left:10px;margin-right:10px;">
+        <h5>当前位置：可用接口->网关参数设置->设置网关参数        </h5><br/>
+        <p>            1.功能描述：        </p><fieldset>
+<pre>通过本接口可以设置网关相关参数。</pre>
+        </fieldset><br />
+        <p>            2.接口地址：        </p>
+        <fieldset>
+            <pre>http://www.gosafenet.net/api/gateway/params/base</pre>
+        </fieldset><br />
+        <p>                    3.说明：                </p>
+        <fieldset>
+            <p>(1).调用方法POST</p>
+            <p>(2).将网关参数数据POST给接口地址</p>
+            <p>
+                (3).网关参数说明：<br />
+                &nbsp;&nbsp;1）id：网关id<br />
+                &nbsp;&nbsp;2）data：网关具体参数<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Term_Code：<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Term_Desc：<br />
+                &nbsp;&nbsp;&nbsp;&nbsp;Addr_Desc：<br />
+            </p>
+            <p>
+                (4).POST数据包格式示例<br />
+                {<br />
+                "id": "sample string 1",<br />
+                "data": {<br />
+                "Term_Code": "sample string 1",<br />
+                "Term_Desc": "sample string 2",<br />
+                "Addr_Desc": "sample string 3"<br />
+                }<br />
+                }<br />
+            </p>
+        </fieldset><br />
+
+
+
+        <p>                    4.返回说明：                </p>
+        <fieldset>
+            <p>返回结果以JSON格式输出，其中，"Success"表示操作成功，"Code"表示返回代码，"Result"表示结果，返回true/false，"Error"表示错误信息，支持HTML。</p>
+            <p>例如：</p>
+            <pre>{
+  "Success": true,
+  "Code": 2,
+  "Result": true,
+  "Error": "sample string 4"
+}
+</pre>
+        </fieldset>
+
+
+    </div>
+</body>
+</html>
+
